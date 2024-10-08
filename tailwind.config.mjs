@@ -5,10 +5,17 @@ export default {
         extend: {
             colors: {
                 owopurple: {
-                    500: '#523c61',
-                    800: '#24162f'
-                }
+                    500: '#6E3C8F',
+                    800: '#49295E'
+                },
+                owoblue: {
+                    200: '#C2F9FF'
+                },
+                owowhite: '#FEFEFE'
             }
+        },
+        fontFamily: {
+            city: ["city", "Clarity City"],
         }
     },
     plugins: [],

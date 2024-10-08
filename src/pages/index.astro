@@ -7,11 +7,14 @@ import Links from '../components/links.astro'
 ---
 
 <Layout title="Stowarzyszenie OwO">
-  <TopMenu/>
+  <!--<TopMenu/>-->
   <Page>
-    <div class="h-full flex flex-col items-center justify-center">
-      <p class="bg-amber-700 p-2 font-bold">Tailwind Styles Testing</p>
-      <a class="mt-2 bg-owopurple-800 rounded-md p-2 text-md font-bold text-amber-100 hover:scale-105 transition duration-100" href="#start">Go To Second Page</a>
+    <div class="h-full flex-grow flex flex-col items-center justify-center">
+      <p class="bg-amber-700 p-2 h-72 w-72 font-bold">LOGO</p>
+      <p class="p-2 font-bold text-3xl">WSPIERAMY FURKULTURĘ</p>
+    </div>
+    <div class="absolute w-full bottom-1 flex flex-row justify-center items-center">
+      <a class="w-28 ml-auto mr-auto hover:scale-105 transition duration-100" href="#start">Go To Second Page</a>
     </div>
   </Page>
   <Page id="start">
@@ -19,6 +22,6 @@ import Links from '../components/links.astro'
       <h1 class="bg-amber-700 p-2 font-bold">Second Page</h1>
     </div>
   </Page>
-   <Links/>
+   <!--<Links/>-->
   <Footer/>
 </Layout>
