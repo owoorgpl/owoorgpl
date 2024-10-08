@@ -9,12 +9,15 @@ import Links from '../components/links.astro'
 <Layout title="Stowarzyszenie OwO">
   <!--<TopMenu/>-->
   <Page>
-    <div class="h-full flex-grow flex flex-col items-center justify-center">
-      <p class="bg-amber-700 p-2 h-72 w-72 font-bold">LOGO</p>
+    <div class="h-full flex-grow flex flex-col items-center justify-center bg-gradient-to-tr from-owopurple-500 to-owopurple-800">
+      <!--<p class="bg-amber-700 p-2 h-72 w-72 font-bold">LOGO</p>-->
+      <img src="/assets/logo.svg" class="h-80 w-80">
       <p class="p-2 font-bold text-3xl">WSPIERAMY FURKULTURĘ</p>
     </div>
-    <div class="absolute w-full bottom-1 flex flex-row justify-center items-center">
-      <a class="w-28 ml-auto mr-auto hover:scale-105 transition duration-100" href="#start">Go To Second Page</a>
+    <div class="absolute w-full bottom-4 flex flex-row justify-center items-center">
+      <a class="ml-auto mr-auto hover:scale-105 transition duration-100" href="#start">
+        <img src="/assets/arrow-down.svg" class="w-12">
+      </a>
     </div>
   </Page>
   <Page id="start">
