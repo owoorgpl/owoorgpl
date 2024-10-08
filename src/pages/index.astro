@@ -4,6 +4,19 @@ import Page from '../components/page.astro';
 import TopMenu from '../components/top-menu.astro';
 import Footer from '../components/footer.astro';
 import Links from '../components/links.astro'
+
+const linkData = [
+  {
+    name: 'Twitter',
+    icon: '../src/assets/entypo-social--twitter.svg',
+    link: 'https://example.com'
+  },
+  {
+    name: 'Twitter',
+    icon: '../src/assets/entypo-social--twitter.svg',
+    link: 'https://example.com'
+  }
+]
 ---
 
 <Layout title="Stowarzyszenie OwO">
@@ -25,6 +38,6 @@ import Links from '../components/links.astro'
       <h1 class="bg-amber-700 p-2 font-bold">Second Page</h1>
     </div>
   </Page>
-   <!-- <Links/> -->
+    <Links links={linkData}/>
   <Footer/>
 </Layout>
