@@ -10,7 +10,7 @@ const linkData = [
   {
     name: 'Twitter',
     icon: '/assets/entypo-social--twitter.svg',
-    link: 'https://example.com'
+    link: 'https://x.com/owoorgpl'
   },
   {
     name: 'Instagram',
@@ -20,26 +20,80 @@ const linkData = [
   {
     name: 'TikTok',
     icon: '/assets/simple-icons--tiktok.svg',
-    link: 'https://example.com'
+    link: 'https://www.tiktok.com/@stowarzyszenie_owo'
   },
   {
     name: 'Facebook',
     icon: '/assets/entypo-social--facebook.svg',
-    link: 'https://example.com'
+    link: 'https://www.facebook.com/owoorgpl'
+  },
+  {
+    name: 'Telegram',
+    icon: 'assets/file-icons--telegram.svg',
+    link: 'https://t.me/owo_info',
   },
 ]
 
+
+
 const peopleData = [
   {
-    name: 'Jan Kowalski - Prezes',
-    desc: 'Lorem Ipsum Dolor Sit Amet',
-    icon: '/assets/logo.svg'
+    name: 'Obey',
+    desc: 'lorem ipsum',
+    icon: '/assets/logo.svg',
   },
   {
-    name: 'Jan Kowalski - Prezes',
-    desc: 'Lorem Ipsum Dolor Sit Amet',
-    icon: '/assets/logo.svg'
+    name: 'Stanisław "Kazi" Samuel',
+    desc: 'Członek komisji rewizyjnej. Z niknąd zorganizuje pełne zabezpieczenie wydarzenia i zadba o porzadek w dokumentach. Prywatnie uwielbia długie rozmowy i poranną kawę w dobrym towarzystwie.',
+    icon: '/assets/logo.svg',
+  },
+  {
+    name: 'Rakso',
+    desc: 'lorem ipsum dolor sit amet',
+    icon: 'assets/logo.svg',
+  },
+  {
+    name: 'Assalt',
+    desc: 'lorem ipsum dolor sit amet',
+    icon: 'assets/logo.svg',
+  },
+  {
+    name: 'Keijo',
+    desc: 'lorem ipsum dolor sit amet',
+    icon: 'assets/logo.svg'
   }
+]
+const zarzadData = [
+  {
+    name: 'Michał "Feniks" Herda',
+    desc: 'Prezes Stowarzyszenia. Dłubie przy różnych organizacjach pozarządowych. Aktywny przy wydarzeniach oraz projektach niewydarzeniowych. Trochę idealista, trochę wypalony. Lubi pracę organiczną oraz dyskusje przy herbacie.',
+    icon: '/assets/staff/feniks.png',
+  },
+  {
+    name: 'Grzegorz "Z-Grate" Dzikowski',
+    desc: 'Wiceprezes Stowarzyszenia. Współorganizuje dużo wydarzeń i akcji Stowarzyszenia. Zajmuje się wszystkimi papierami oraz rzeczami na cito. Zawsze zapracowany, zawsze coś robi, ale stara się zawsze znaleźć czas na pogadanie.',
+    icon: '/assets/staff/znerd.png',
+  },
+  {
+    name: 'Komatsu',
+    desc: 'ekstrawetyczna smoko-ćma. ratol i artysta wszelkiej maści. Postanowiła spożytkować swoje umiejętności, znajomości i wiedzę oraz wolny czas aby przysłużyć się pomocnym skrzydłem polskiemu środowisku Furry. I na razie dobrze się w tym bawi.',
+    icon: '/assets/staff/komatsu-med.jpg',
+  },
+  {
+    name: 'Hasera',
+    desc: 'lorem ipsum dolor sit amet',
+    icon: '/assets/logo.svg',
+  },
+  {
+    name: 'Nova',
+    desc: 'lorem ipsum dolor sit amet',
+    icon: 'assets/logo.svg',
+  },
+  {
+    name: 'Asdamk',
+    desc: 'lorem ipsum dolor sit amet',
+    icon: 'assets/logo.svg',
+  },
 ]
 ---
 
@@ -63,7 +117,7 @@ const peopleData = [
   </Page>
     <Links links={linkData}/>
 
-  <Staff people={peopleData} title="Zarząd Stowarzyszenia"/>
+  <Staff people={zarzadData} title="Zarząd Stowarzyszenia"/>
   <Staff people={peopleData} title="Komisja Rewizyjna"/>
   <Footer/>
 </Layout>
