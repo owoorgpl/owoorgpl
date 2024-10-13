@@ -4,6 +4,7 @@ interface Props {
     name: string;
     desc: string;
     icon: string;
+    mail?: string;
     
   }[];
   title?: string;
@@ -19,9 +20,8 @@ const {people, title}: Props = Astro.props;
       <div class="flex odd:flex-row even:flex-row-reverse items-center justify-between w-full gap-12 group">
         <img src={user.icon} alt="staff" class="h-80 w-80">
         <div class="flex flex-col justify-start flex-grow group-even:text-right">
-            <h2 class="font-bold text-2xl">
-              <a href=" ">{user.name}</a>
-            </h2>
+          <h2 class="font-bold text-2xl flex flex-row gap-3 items-center group-even:flex-row-reverse">{user.name}{user.mail ? <a class="hover:scale-110 transition duration-100" href={`mailto:${user.mail}`}><img  class="h-6" src="/assets/tabler--mail-share.svg"></a> : null}</h2>
+            {/* {user.mail ?  <a class="font-bold text-2xl underline" href={`mailto:${user.mail}`}>{user.name}</a> : <h2 class="font-bold text-2xl">{user.name}</h2>} */}
             <p class="mt-4">{user.desc}</p>
         </div>
       </div>

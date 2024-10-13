@@ -13,7 +13,7 @@ const {links}: Props = Astro.props;
 <div class="flex flex-col gap-6 items-center justify-between">
   {links.map((link) =>
       <a href={link.link} target="_blank"
-         class="flex font-bold rounded-lg text-lg h-25 p-3 bg-amber-700 text-white w-full max-w-xs  items-center justify-center"><img
-          src={link.icon} alt="Icon" class="w-6 h-6 p-1">{link.name}</a>
+         class="flex font-bold rounded-lg text-lg h-25 p-3 bg-owowhite bg-opacity-40 text-owopurple-800 transition duration-150 hover:text-owowhite w-full max-w-xs  items-center justify-center"><img
+          src={link.icon} alt="Icon" class=" stroke-owopurple-800 hover:stroke-owowhite w-6 h-6 p-1">{link.name}</a>
   )}
 </div>
