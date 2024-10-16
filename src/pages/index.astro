@@ -5,6 +5,7 @@ import TopMenu from '../components/top-menu.astro';
 import Footer from '../components/footer.astro';
 import Links from '../components/links.astro';
 import Staff from '../components/staff-list.astro';
+import HtmlPanel from '../components/html-panel.astro';
 
 const linkData = [
   {
@@ -113,11 +114,26 @@ const zarzadData = [
       </a>
     </div>
   </Page>
-  <Page id="start">
-    <div class="h-full flex flex-col items-center justify-center">
-      <h1 class="bg-amber-700 p-2 font-bold">Second Page</h1>
-    </div>
-  </Page>
+  <div id="start"/>
+  <HtmlPanel>
+    <h2 class="text-center font-bold text-5xl uppercase mb-4">kim jesteśmy</h2>
+    <!--TODO: Add logo with dark text here ↓↓↓ -->
+    <img src="/public/assets/logo.svg" class="h-48 float-left mr-4 mb-2">
+    <p class="font-semibold">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium architecto beatae cupiditate doloremque
+      illum laborum libero odit praesentium saepe sit. A accusamus aliquid, aspernatur consectetur error expedita
+      explicabo facere id, iure nesciunt nostrum omnis perferendis similique sint tempore ullam voluptatibus. Asperiores
+      dicta excepturi minima totam vero? Consectetur consequatur, inventore. Fugiat impedit maxime nam nisi quam!
+      Consequatur, est ex magnam minus nemo nostrum praesentium rerum. Aliquam assumenda corporis incidunt non officia
+      omnis ratione tempora totam! Dolor doloribus ducimus eum facilis laudantium magni possimus quaerat! At, corporis
+      cumque delectus distinctio dolores doloribus, earum enim expedita explicabo facilis id incidunt, iusto magnam modi
+      obcaecati odio officia officiis placeat quae quia quo sequi sunt temporibus vero voluptates. Delectus deserunt
+      dicta, ex fugiat recusandae reiciendis.</p>
+  </HtmlPanel>
+  <!--<Page id="start">-->
+  <!--  <div class="h-full flex flex-col items-center justify-center">-->
+  <!--    <h1 class="bg-amber-700 p-2 font-bold">Second Page</h1>-->
+  <!--  </div>-->
+  <!--</Page>-->
     <Links links={linkData}/>
 
   <Staff people={zarzadData} title="Zarząd Stowarzyszenia"/>
