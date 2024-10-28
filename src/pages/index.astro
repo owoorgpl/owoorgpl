@@ -7,6 +7,8 @@ import Links from '../components/links.astro';
 import Staff from '../components/staff-list.astro';
 import HtmlPanel from '../components/html-panel.astro';
 
+
+// TODO: Change icons color to darkblue
 const linkData = [
   {
     name: 'Twitter',
@@ -33,7 +35,13 @@ const linkData = [
     icon: 'assets/file-icons--telegram.svg',
     link: 'https://t.me/owo_info',
   },
-]
+  // TODO: Add icon to it
+  {
+    name: 'Polityka Prywatności',
+    icon: '',
+    link: '/policy'
+  }
+];
 
 
 
@@ -41,18 +49,13 @@ const peopleData = [
   {
     name: 'Marcin "Obey138" Wojtarowicz',
     desc: 'Przewodniczący Komisji Rewizyjnej Miał miał. Miał miał miał? Miał miał miał miał miał miał, miał miał miał miał. Miał miał miał miał miał, miał miał miał miał, miał miał, miał miał miał miał miał miał miał. Miał miał miał! Jeżeli masz uwagi co do naszych działań lub co do działań któregoś z naszych członków, pisz na komisja-rewizyjna@owo.org.pl',
-    icon: '/assets/staff/Obey.png',
-    
+    icon: '/assets/staff/Obey.webp',
+
   },
   {
     name: 'Stanisław "Kazi" Samuel',
     desc: 'Członek komisji rewizyjnej. Z niknąd zorganizuje pełne zabezpieczenie wydarzenia i zadba o porzadek w dokumentach. Prywatnie uwielbia długie rozmowy i poranną kawę w dobrym towarzystwie.',
-    icon: '/assets/staff/kazi.jpg',
-  },
-  {
-    name: 'Rakso',
-    desc: 'lorem ipsum dolor sit amet',
-    icon: 'assets/logo.svg',
+    icon: '/assets/staff/kazi.webp',
   },
   {
     name: 'Assalt',
@@ -60,28 +63,33 @@ const peopleData = [
     icon: 'assets/logo.svg',
   },
   {
+    name: 'Rakso',
+    desc: 'Energiczny lis będący na co dzień zapalonym fanem programowania, WebDevu i wszystkiego, co ma związek z branżą IT,0 oraz elektroniką. W stowarzyszeniu członek komisji rewizyjnej starający się rozwijać i zdobywać nowe umiejętności wspomagając polską furkulturę.',
+    icon: 'assets/staff/rakso.webp',
+  },
+  {
     name: 'Keijo',
     desc: 'lorem ipsum dolor sit amet',
     icon: 'assets/logo.svg'
   }
-]
+];
 const zarzadData = [
   {
     name: 'Michał "Feniks" Herda',
     desc: 'Prezes Stowarzyszenia. Dłubie przy różnych organizacjach pozarządowych. Aktywny przy wydarzeniach oraz projektach niewydarzeniowych. Trochę idealista, trochę wypalony. Lubi pracę organiczną oraz dyskusje przy herbacie.',
-    icon: '/assets/staff/feniks.png',
+    icon: '/assets/staff/feniks.webp',
     mail: 'm.herda@owo.org.pl'
   },
   {
     name: 'Grzegorz "Z-Grate" Dzikowski',
     desc: 'Wiceprezes Stowarzyszenia. Współorganizuje dużo wydarzeń i akcji Stowarzyszenia. Zajmuje się wszystkimi papierami oraz rzeczami na cito. Zawsze zapracowany, zawsze coś robi, ale stara się zawsze znaleźć czas na pogadanie.',
-    icon: '/assets/staff/znerd.png',
+    icon: '/assets/staff/znerd.webp',
     mail: 'g.dzikowski@owo.org.pl'
   },
   {
     name: 'Komatsu',
     desc: 'ekstrawetyczna smoko-ćma. ratol i artysta wszelkiej maści. Postanowiła spożytkować swoje umiejętności, znajomości i wiedzę oraz wolny czas aby przysłużyć się pomocnym skrzydłem polskiemu środowisku Furry. I na razie dobrze się w tym bawi.',
-    icon: '/assets/staff/komatsu-med.jpg',
+    icon: '/assets/staff/komatsu-med.webp',
   },
   {
     name: 'Hasera',
@@ -91,20 +99,21 @@ const zarzadData = [
   {
     name: 'Nova',
     desc: 'Członek Zarządu stowarzyszenia. Idealistka, wierzy w słuszność działania stowarzyszenia w furkulturze. Na co dzień studentka Game Studies, po godzinach zaś pomaga w futrzastych eventach tworząc atrakcje dla uczestników. Chce robić wydarzenia oraz wzbogacać kulturę futrzastą o nowe dziedziny sztuki jakich w naszym kraju jeszcze nie widziano.Ah i jescze jedno~ SCREEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE!!!!!',
-    icon: 'assets/staff/nova.png',
+    icon: 'assets/staff/nova.webp',
   },
   {
     name: 'Asdamk',
     desc: 'lorem ipsum dolor sit amet',
     icon: 'assets/logo.svg',
   },
-]
+];
 ---
 
 <Layout title="Stowarzyszenie OwO">
   <!--<TopMenu/>-->
   <Page>
-    <div class="h-full flex-grow flex flex-col items-center justify-center bg-gradient-to-tr from-owopurple-500 to-owopurple-800">
+    <div
+        class="h-full flex-grow flex flex-col items-center justify-center bg-gradient-to-tr from-owopurple-500 to-owopurple-800">
       <img src="/assets/logo.svg" alt="Logo" class="h-80 w-80">
       <p class="p-2 font-bold text-3xl">WSPIERAMY FURKULTURĘ</p>
     </div>
@@ -115,28 +124,32 @@ const zarzadData = [
     </div>
   </Page>
   <div id="start"/>
-  <HtmlPanel>
-    <h2 class="text-center font-bold text-5xl uppercase mb-4">kim jesteśmy</h2>
-    <!--TODO: Add logo with dark text here ↓↓↓ -->
-    <img src="/public/assets/logo.svg" class="h-48 float-left mr-4 mb-2">
-    <p class="font-semibold">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium architecto beatae cupiditate doloremque
-      illum laborum libero odit praesentium saepe sit. A accusamus aliquid, aspernatur consectetur error expedita
-      explicabo facere id, iure nesciunt nostrum omnis perferendis similique sint tempore ullam voluptatibus. Asperiores
-      dicta excepturi minima totam vero? Consectetur consequatur, inventore. Fugiat impedit maxime nam nisi quam!
-      Consequatur, est ex magnam minus nemo nostrum praesentium rerum. Aliquam assumenda corporis incidunt non officia
-      omnis ratione tempora totam! Dolor doloribus ducimus eum facilis laudantium magni possimus quaerat! At, corporis
-      cumque delectus distinctio dolores doloribus, earum enim expedita explicabo facilis id incidunt, iusto magnam modi
-      obcaecati odio officia officiis placeat quae quia quo sequi sunt temporibus vero voluptates. Delectus deserunt
-      dicta, ex fugiat recusandae reiciendis.</p>
-  </HtmlPanel>
-  <!--<Page id="start">-->
-  <!--  <div class="h-full flex flex-col items-center justify-center">-->
-  <!--    <h1 class="bg-amber-700 p-2 font-bold">Second Page</h1>-->
-  <!--  </div>-->
-  <!--</Page>-->
+  <div class="flex flex-col gap-32 mt-32">
+    <HtmlPanel>
+      <h2 class="text-center font-bold text-5xl uppercase mb-4">kim jesteśmy</h2>
+      <!--TODO: Add logo with dark text here ↓↓↓ -->
+      <img src="/public/assets/logo.svg" class="h-48 float-left mr-4 mb-2">
+      <p class="font-semibold">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium architecto beatae
+        cupiditate doloremque
+        illum laborum libero odit praesentium saepe sit. A accusamus aliquid, aspernatur consectetur error expedita
+        explicabo facere id, iure nesciunt nostrum omnis perferendis similique sint tempore ullam voluptatibus.
+        Asperiores
+        dicta excepturi minima totam vero? Consectetur consequatur, inventore. Fugiat impedit maxime nam nisi quam!
+        Consequatur, est ex magnam minus nemo nostrum praesentium rerum. Aliquam assumenda corporis incidunt non officia
+        omnis ratione tempora totam! Dolor doloribus ducimus eum facilis laudantium magni possimus quaerat! At, corporis
+        cumque delectus distinctio dolores doloribus, earum enim expedita explicabo facilis id incidunt, iusto magnam
+        modi
+        obcaecati odio officia officiis placeat quae quia quo sequi sunt temporibus vero voluptates. Delectus deserunt
+        dicta, ex fugiat recusandae reiciendis.</p>
+    </HtmlPanel>
+    <!--<Page id="start">-->
+    <!--  <div class="h-full flex flex-col items-center justify-center">-->
+    <!--    <h1 class="bg-amber-700 p-2 font-bold">Second Page</h1>-->
+    <!--  </div>-->
+    <!--</Page>-->
     <Links links={linkData}/>
 
-  <Staff people={zarzadData} title="Zarząd Stowarzyszenia"/>
-  <Staff people={peopleData} title="Komisja Rewizyjna"/>
-  <Footer/>
+    <Staff people={zarzadData} title="Zarząd Stowarzyszenia"/>
+    <Staff people={peopleData} title="Komisja Rewizyjna"/>
+  </div>
 </Layout>
