@@ -6,7 +6,7 @@ interface Props {
 const {}: Props = Astro.props;
 ---
 
-<div class="mt-12 w-full h-44 p-4 bg-owowhite bg-opacity-70 text-owopurple-800 flex items-center justify-center">
+<div class="relative mt-96 w-full h-44 p-4 bg-owowhite bg-opacity-70 text-owopurple-800 flex items-center justify-center">
   <div class="flex grow justify-around">
     <div>
       <p class="font-extrabold">
@@ -26,4 +26,5 @@ const {}: Props = Astro.props;
       <p class="font-extrabold">© Stowarzyszenie OwO, 2024.<br> Wszystkie prawa zastrzeżone.</p>
     </div>
   </div>
+  <img src="/assets/logo-bottom.svg" alt="logo-bottom" class="absolute h-[36rem] right-0 bottom-0">
 </div>
