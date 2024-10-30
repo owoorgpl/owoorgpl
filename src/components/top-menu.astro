@@ -1,9 +1,32 @@
 ---
-
+const links = [
+  {title: 'kim jesteśmy', link: '#start'},
+  {title: 'gdzie nas znaleźć', link: '#contact-us'},
+  {title: 'ważne linki', link: '#links'},
+  {title: 'zarząd i kr', link: '#stuff'},
+];
 ---
 
-<div class="absolute top-0 sticky left-0 w-full h-14 bg-owopurple-800 p-2.5 flex gap-1 items-center">
-  <p>Test</p>
-  <p>Test</p>
-  <p>Test</p>
+<div id="menu-top" data-show="false"
+     class="pointer-events-none opacity-0 [&[data-show=true]]:opacity-100 [&[data-show=true]]:pointer-events-auto flex top-0 fixed w-full h-12 flex-row justify-center items-center gap-6 bg-owowhite bg-opacity-70 text-owopurple-800 text-xl font-bold z-40 transition-all duration-500">
+  {links.map((link) => {
+    return <a href={link.link} class="hover:scale-105 transition-all duration-100 uppercase">{link.title}</a>;
+  })}
 </div>
+
+<script lang="ts">
+  const menu = document.getElementById('menu-top');
+  let h = window.innerHeight;
+
+  window.addEventListener('resize', e => {
+    h = window.innerHeight;
+  });
+
+  window.addEventListener('scroll', e => {
+    if (window.scrollY >= h && menu.getAttribute('data-show') == 'false') {
+      menu.setAttribute('data-show', 'true');
+    } else if (window.scrollY < h && menu.getAttribute('data-show') == 'true') {
+      menu.setAttribute('data-show', 'false');
+    }
+  });
+</script>
