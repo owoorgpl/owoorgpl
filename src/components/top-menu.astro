@@ -1,6 +1,6 @@
 ---
 const links = [
-  {title: 'kim jesteśmy', link: '#start'},
+  // {title: 'kim jesteśmy', link: '#start'},
   {title: 'gdzie nas znaleźć', link: '#contact-us'},
   {title: 'ważne linki', link: '#links'},
   {title: 'zarząd i kr', link: '#stuff'},
@@ -8,18 +8,62 @@ const links = [
 ---
 
 <div id="menu-top" data-show="false"
-   class="pointer-events-none opacity-0 [&[data-show=true]]:opacity-100 [&[data-show=true]]:pointer-events-auto flex top-0 fixed w-full h-14 flex-row justify-center items-center gap-6 bg-owowhite text-owopurple-800 text-xl font-bold z-40 transition-all duration-500">
-  {links.map((link) => {
-    return <a href={link.link} class="hover:scale-105 transition-all duration-100 uppercase">{link.title}</a>;
-  })}
+   class="pointer-events-none opacity-0  [&[data-show=true]]:opacity-100 [&[data-show=true]]:pointer-events-auto flex top-0 fixed w-full min-h-14 md:h-14 flex-col md:flex-row p-4 md:p-0 justify-center md:items-center gap-6 bg-owowhite text-owopurple-800 text-xl font-bold z-40 transition-all duration-500">
+  <div id="button-burger" class="grow-0 max-w-10 flex md:hidden hover:cursor-pointer hover:scale-105">
+    <svg class="h-10 w-10" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
+      <path fill="none" stroke="#49295E" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M3 6h18M3 12h18M3 18h18"/>
+    </svg>
+  </div>
+  <!--  DESKTOP  -->
+  <div class="hidden md:flex gap-6 items-start justify-between flex-col md:flex-row md:items-center">
+    {links.map((link) => {
+      return <a href={link.link} class="md:hover:scale-105 transition-all duration-100 uppercase">{link.title}</a>;
+    })}
+  </div>
+  <!--  MOBILE  -->
+  <div id="menu-items" data-show="false" class="hidden [&[data-show=true]]:flex md:hidden  gap-6 items-start justify-between flex-col md:flex-row md:items-center">
+    {links.map((link) => {
+      return <a href={link.link} class="md:hover:scale-105 transition-all duration-100 uppercase">{link.title}</a>;
+    })}
+  </div>
 </div>
 
 <script lang="ts">
+  const menuItems = document.getElementById('menu-items');
   const menu = document.getElementById('menu-top');
+  const openMenu = document.getElementById('button-burger');
   let h = window.innerHeight;
+  let opened = false;
+  const onClickOutside = (element, callback) => {
+
+    document.addEventListener('click', e => {
+      if (!element.contains(e.target)) callback();
+    });
+  };
+  onClickOutside(menu, () => {
+    opened = false;
+    menuItems.setAttribute('data-show', opened);
+  });
+
+  const menuButtons = document.querySelectorAll('#menu-items > a');
+
+  for (let i = 0; i < menuButtons.length; i++) {
+    const button = menuButtons[i];
+    button.addEventListener('click', () => {
+      opened = false;
+      menuItems.setAttribute('data-show', opened);
+    })
+  }
+
 
   window.addEventListener('resize', e => {
     h = window.innerHeight;
+  });
+
+  openMenu.addEventListener('click', e => {
+    opened = !opened;
+    menuItems.setAttribute('data-show', opened);
   });
 
   window.addEventListener('scroll', e => {
