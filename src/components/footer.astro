@@ -7,24 +7,30 @@ const {}: Props = Astro.props;
 ---
 
 <div class="relative mt-96 w-full md:h-44 p-4 bg-owowhite bg-opacity-70 text-owopurple-800 flex items-center justify-center">
-  <div class="flex flex-col md:flex-row gap-6 md:gap-0 grow justify-around">
-    <div class="grow">
-      <p class="font-extrabold text-center">
+  <img src="/assets/logo-bottom.svg" alt="logo-bottom" class="absolute w-full max-w-[36rem] right-0 bottom-0 z-0">
+  <div class="flex flex-col md:flex-row gap-6 md:gap-0 grow justify-around z-10">
+    <div class="">
+      <p class="font-extrabold text-center md:text-start">
+        Ważne Linki: <br>
+        <a class="underline hover:text-owopurple-500" href="/policy">Polityka Prywatności</a>
+      </p>
+    </div>
+    <div class="">
+      <p class="font-extrabold text-center md:text-start">
         Stowarzyszenie OwO <br>
         UL. ZAMKNIĘTA 10 /1.5 <br>
         30-554 KRAKÓW
       </p>
     </div>
-    <div class="grow">
-      <p class="font-extrabold text-center">
+    <div class="">
+      <p class="font-extrabold text-center md:text-start">
         KRS 0001100597 <br>
         NIP 6793296635 <br>
         REGON 52838914700000
       </p>
     </div>
-    <div class="grow">
-      <p class="font-extrabold text-center">© Stowarzyszenie OwO, 2024.<br> Wszystkie prawa zastrzeżone.</p>
+    <div class="text-center md:text-start">
+      <p class="font-extrabold opacity-100">© 2024 Stowarzyszenie OwO<br>Wszystkie prawa zastrzeżone</p>
     </div>
   </div>
-  <img src="/assets/logo-bottom.svg" alt="logo-bottom" class="absolute w-full max-w-[36rem] right-0 bottom-0">
 </div>
