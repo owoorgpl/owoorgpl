@@ -8,7 +8,7 @@ import Staff from '../components/staff-list.astro';
 import HtmlPanel from '../components/html-panel.astro';
 
 
-// TODO: Change icons color to darkblue
+// Sociale
 const socialsData = [
   {
     name: 'Twitter',
@@ -36,27 +36,32 @@ const socialsData = [
     link: 'https://t.me/owo_info',
   }
 ];
-
+// ważne linki
 const linkData = [
-  // TODO: Add icon to it
+
   {
     name: 'Polityka Prywatności',
     icon: 'assets/prime--book.svg',
     link: '/policy'
   },
   {
-    // ikonka do dodania
+  
     name: 'Kontankt E-Mail',
-    icon: ' ',
+    icon: 'assets/tabler--mail-share.svg',
     link: 'mailto:kontakt@owo.org.pl'
+  },
+  {
+    name: 'Kontakt z Komisją Rewizyjną',
+    icon: 'assets/tabler--mail-share.svg',
+    link: 'mailto:komisja-rewizyjna@owo.org.pl'
   }
   ];
 
-
+//KR
 const peopleData = [
   {
     name: 'Marcin "Obey138" Wojtarowicz',
-    desc: 'Przewodniczący Komisji Rewizyjnej Miał miał. Miał miał miał? Miał miał miał miał miał miał, miał miał miał miał. Miał miał miał miał miał, miał miał miał miał, miał miał, miał miał miał miał miał miał miał. Miał miał miał! Jeżeli masz uwagi co do naszych działań lub co do działań któregoś z naszych członków, pisz na komisja-rewizyjna@owo.org.pl',
+    desc: 'Przewodniczący Komisji Rewizyjnej Miał miał. Miał miał miał? Miał miał miał miał miał miał, miał miał miał miał. Miał miał miał miał miał, miał miał miał miał, miał miał, miał miał miał miał miał miał miał. Miał miał miał!',
     icon: '/assets/staff/Obey.webp',
 
   },
@@ -65,11 +70,11 @@ const peopleData = [
     desc: 'Członek komisji rewizyjnej. Z niknąd zorganizuje pełne zabezpieczenie wydarzenia i zadba o porzadek w dokumentach. Prywatnie uwielbia długie rozmowy i poranną kawę w dobrym towarzystwie.',
     icon: '/assets/staff/kazi.webp',
   },
-  // {
-  //   name: 'Assalt',
-  //   desc: 'lorem ipsum dolor sit amet',
-  //   icon: 'assets/logo.svg',
-  // },
+  {
+    name: 'Assalt',
+    desc: 'Typowy lis informatyk. Z bonusowych umiejętności mechanik elektronik i organizator konwentów. Jeżeli przyjdziesz, otwarcie po pomoc to wyciągnie ci rozwiązanie spod ziemi. A coś więcej? Podejdź, zagadaj, lisy znane są z bycia przyjaznymi wobec wszystkich gatunków i nigdy nie warczą ani nie gryzą. No, chyba że trzeba podszczypać dla zabawy.',
+    icon: '/assets/staff/assalt.jpg'
+  },
   {
     name: 'Rakso',
     desc: 'Energiczny lis będący na co dzień zapalonym fanem programowania, WebDevu i wszystkiego, co ma związek z branżą IT, oraz elektroniką. W stowarzyszeniu członek komisji rewizyjnej starający się rozwijać i zdobywać nowe umiejętności wspomagając polską furkulturę.',
@@ -81,6 +86,7 @@ const peopleData = [
     icon: 'assets/staff/Keijo.PNG'
   }
 ];
+//zarząd
 const zarzadData = [
   {
     name: 'Michał "Feniks" Herda',
