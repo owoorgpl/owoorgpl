@@ -2,6 +2,7 @@
 interface Props {
   people: {
     name: string;
+    titl?: string;
     desc: string;
     icon: string;
     mail?: string;
@@ -18,11 +19,11 @@ const {people, title}: Props = Astro.props;
     {title?<h1 class="text-3xl md:text-5xl font-bold text-center mb-2 uppercase break-words w-full">{title}</h1>:null}
   {people.map((user) =>
       <div class="flex flex-col md:odd:flex-row md:even:flex-row-reverse items-center justify-between w-full gap-12 group p-4 overflow-hidden">
-        <img src={user.icon} alt="staff" class="max-w-80 w-full">
+        <img src={user.icon} alt="Staff Member Avatar" loading="lazy" class="max-w-56 md:max-w-80 w-full">
         <div class="w-full flex flex-col justify-center items-center md:items-start md:group-even:items-end md:justify-start flex-grow text-center md:text-left md:group-even:text-right">
-          <h2 class="font-bold text-2xl flex flex-row gap-3 justify-center md:justify-start items-center group-even:flex-row-reverse">{user.name}{user.mail ? <a class="hover:scale-110 transition duration-100" href={`mailto:${user.mail}`}><img  class="h-6" src="/assets/tabler--mail-share.svg"></a> : null}</h2>
-            {/* {user.mail ?  <a class="font-bold text-2xl underline" href={`mailto:${user.mail}`}>{user.name}</a> : <h2 class="font-bold text-2xl">{user.name}</h2>} */}
-            <p class="mt-4 break-words w-full">{user.desc}</p>
+          <h2 class="font-bold text-2xl flex flex-row gap-3 justify-center md:justify-start items-center group-even:flex-row-reverse">{user.name}{user.mail ? <a class="hover:scale-110 transition duration-100" href={`mailto:${user.mail}`}><img class="h-6" alt="Icon" loading="lazy" src="/assets/icons/mail-share.svg"></a> : null}</h2>
+          <h3 class="mt-1 text-xl">{user.titl}</h3>
+          <p class="mt-4 break-words w-full">{user.desc}</p>
         </div>
       </div>
   )}

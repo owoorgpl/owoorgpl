@@ -2,17 +2,26 @@
 import Layout from '../layouts/layout.astro';
 import Page from '../components/page.astro';
 import TopMenu from '../components/top-menu.astro';
-import Footer from '../components/footer.astro';
 import Links from '../components/links.astro';
 import Staff from '../components/staff-list.astro';
 import HtmlPanel from '../components/html-panel.astro';
 
 
-// Sociale
+// Social Media
 const socialsData = [
   {
+    name: 'Telegram',
+    icon: '/assets/icons/social-telegram.svg',
+    link: 'https://t.me/owo_info',
+  },
+  {
+    name: 'Facebook',
+    icon: '/assets/icons/social-facebook.svg',
+    link: 'https://www.facebook.com/owoorgpl'
+  },
+  {
     name: 'Twitter',
-    icon: '/assets/entypo-social--twitter.svg',
+    icon: '/assets/icons/social-twitter.svg',
     link: 'https://x.com/owoorgpl'
   },
   // {
@@ -22,160 +31,174 @@ const socialsData = [
   // },
   {
     name: 'TikTok',
-    icon: '/assets/simple-icons--tiktok.svg',
+    icon: '/assets/icons/social-tiktok.svg',
     link: 'https://www.tiktok.com/@stowarzyszenie_owo'
-  },
-  {
-    name: 'Facebook',
-    icon: '/assets/entypo-social--facebook.svg',
-    link: 'https://www.facebook.com/owoorgpl'
-  },
-  {
-    name: 'Telegram',
-    icon: 'assets/file-icons--telegram.svg',
-    link: 'https://t.me/owo_info',
   }
 ];
-// ważne linki
-const linkData = [
-
+// Links
+const linksData = [
+  {
+    name: 'Statut Stowarzyszenia',
+    icon: '/assets/icons/book.svg',
+    link: 'https://statut.owo.org.pl'
+  },
+  {
+    name: 'Standardy Ochrony Małoletnich',
+    icon: '/assets/icons/book.svg',
+    link: 'https://som.owo.org.pl'
+  },
   {
     name: 'Polityka Prywatności',
-    icon: 'assets/prime--book.svg',
+    icon: '/assets/icons/book.svg',
     link: '/policy'
   },
   {
-  
-    name: 'Kontakt E-Mail',
-    icon: 'assets/tabler--mail-share.svg',
+    name: 'E-mail Kontakt',
+    icon: '/assets/icons/mail-share.svg',
     link: 'mailto:kontakt@owo.org.pl'
   },
   {
-    name: 'Kontakt z Komisją Rewizyjną',
-    icon: 'assets/tabler--mail-share.svg',
+    name: 'E-mail Komisja Rewizyjna',
+    icon: '/assets/icons/mail-share.svg',
     link: 'mailto:komisja-rewizyjna@owo.org.pl'
   }
-  ];
-
-//KR
-const peopleData = [
-  {
-    name: 'Marcin "Obey138" Wojtarowicz',
-    desc: 'Przewodniczący Komisji Rewizyjnej Miał miał. Miał miał miał? Miał miał miał miał miał miał, miał miał miał miał. Miał miał miał miał miał, miał miał miał miał, miał miał, miał miał miał miał miał miał miał. Miał miał miał!',
-    icon: '/assets/staff/Obey.webp',
-
-  },
-  {
-    name: 'Stanisław "Kazi" Samuel',
-    desc: 'Członek komisji rewizyjnej. Z niknąd zorganizuje pełne zabezpieczenie wydarzenia i zadba o porzadek w dokumentach. Prywatnie uwielbia długie rozmowy i poranną kawę w dobrym towarzystwie.',
-    icon: '/assets/staff/kazi.webp',
-  },
-  {
-    name: 'Assalt',
-    desc: 'Typowy lis informatyk. Z bonusowych umiejętności mechanik elektronik i organizator konwentów. Jeżeli przyjdziesz, otwarcie po pomoc to wyciągnie ci rozwiązanie spod ziemi. A coś więcej? Podejdź, zagadaj, lisy znane są z bycia przyjaznymi wobec wszystkich gatunków i nigdy nie warczą ani nie gryzą. No, chyba że trzeba podszczypać dla zabawy.',
-    icon: '/assets/staff/assalt.jpg'
-  },
-  {
-    name: 'Rakso',
-    desc: 'Energiczny lis będący na co dzień zapalonym fanem programowania, WebDevu i wszystkiego, co ma związek z branżą IT, oraz elektroniką. W stowarzyszeniu członek komisji rewizyjnej starający się rozwijać i zdobywać nowe umiejętności wspomagając polską furkulturę.',
-    icon: 'assets/staff/rakso.webp',
-  },
-  {
-    name: 'Keijo',
-    desc: 'Członek komisji rewizyjnej. Komik, jaskiniowiec komputerowy, specjalista od Linuxa, fursuiter, w przyszłości może artysta. Zawodowo inżynier DevOps. Lubi pomagać, zajmować sie technologią, muzyką i tematami wokół. Nie lubi przelotnych trendów na świecie. Jeśli masz jakiś temat który chcesz przegadać z Keijo, nie bój się zagadać.',
-    icon: 'assets/staff/Keijo.PNG'
-  }
 ];
-//zarząd
-const zarzadData = [
+// Board
+const boardData = [
   {
     name: 'Michał "Feniks" Herda',
-    desc: 'Prezes Stowarzyszenia. Dłubie przy różnych organizacjach pozarządowych. Aktywny przy wydarzeniach oraz projektach niewydarzeniowych. Trochę idealista, trochę wypalony. Lubi pracę organiczną oraz dyskusje przy herbacie.',
+    titl: 'Prezes',
+    desc: 'Dłubie przy różnych organizacjach pozarządowych. Aktywny przy wydarzeniach oraz projektach niewydarzeniowych. Trochę idealista, trochę wypalony. Lubi pracę organiczną oraz dyskusje przy herbacie.',
     icon: '/assets/staff/feniks.webp',
     mail: 'm.herda@owo.org.pl'
   },
   {
     name: 'Grzegorz "Z-Grate" Dzikowski',
-    desc: 'Wiceprezes Stowarzyszenia. Współorganizuje dużo wydarzeń i akcji Stowarzyszenia. Zajmuje się wszystkimi papierami oraz rzeczami na cito. Zawsze zapracowany, zawsze coś robi, ale stara się zawsze znaleźć czas na pogadanie.',
+    titl: 'Wiceprezes',
+    desc: 'Współorganizuje dużo wydarzeń i akcji Stowarzyszenia. Zajmuje się wszystkimi papierami oraz rzeczami na cito. Zawsze zapracowany, zawsze coś robi, ale stara się zawsze znaleźć czas na pogadanie.',
     icon: '/assets/staff/znerd.webp',
     mail: 'g.dzikowski@owo.org.pl'
   },
   {
-    name: 'Paulina "Komatsu" Siembida',
-    desc: 'Ekstrawertyczna smoko-ćma. ratol i artysta wszelkiej maści. Postanowiła spożytkować swoje umiejętności, znajomości i wiedzę oraz wolny czas, aby przysłużyć się pomocnym skrzydłem polskiemu środowisku Furry. I na razie dobrze się w tym bawi.',
-    icon: '/assets/staff/komatsu-med.webp'
-  },
-  {
     name: 'Patrycja "Hasera" Piskuła',
+    titl: 'Członek Zarządu',
     desc: 'Serwerownia to jest jej drugi dom, odpowiada za infrastrukturę IT Stowarzyszenia oraz streaming wydarzeń. Współorganizuje konwenty i wydarzenia futrzaste oraz obsługuje wydarzenia fantastyczne. Doświadczenie czerpie ze współpracy z organizacjami pozarządowymi i z własnych projektów. Chętnie przytuli i pogada o technologii. :3',
-    icon: '/assets/staff/hasera.png',
-  },
-  {
-    name: 'Emilia “Nova” Biemer',
-    desc: 'Członek Zarządu stowarzyszenia. Idealistka, wierzy w słuszność działania stowarzyszenia w furkulturze. Na co dzień studentka Game Studies, po godzinach zaś pomaga w futrzastych eventach tworząc atrakcje dla uczestników. Chce robić wydarzenia oraz wzbogacać kulturę futrzastą o nowe dziedziny sztuki jakich w naszym kraju jeszcze nie widziano.Ah i jescze jedno~ SCREEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE!!!!!',
-    icon: 'assets/staff/nova.webp',
+    icon: '/assets/staff/hasera.webp',
   },
   {
     name: 'Adam "Asdamk" Kowalski',
-    desc: 'Członek Zarządu stowarzyszenia. Karmelowy wilk etiopski trzymający łapkę na pulsie w każdym aspekcie działalności stowarzyszenia. Zawsze gotowy do pomocy, zawsze zainteresowany nowymi inicjatywami i pomysłami na rozwój furkultury.',
-    icon: 'assets/staff/asdamk_transparent.png',
+    titl: 'Członek Zarządu',
+    desc: 'Karmelowy wilk etiopski trzymający łapkę na pulsie w każdym aspekcie działalności stowarzyszenia. Zawsze gotowy do pomocy, zawsze zainteresowany nowymi inicjatywami i pomysłami na rozwój furkultury.',
+    icon: 'assets/staff/asdamk.webp',
   },
+  {
+    name: 'Emilia “Nova” Biemer',
+    titl: 'Członek Zarządu',
+    desc: 'Idealistka, wierzy w słuszność działania stowarzyszenia w furkulturze. Na co dzień studentka Game Studies, po godzinach zaś pomaga w futrzastych eventach tworząc atrakcje dla uczestników. Chce robić wydarzenia oraz wzbogacać kulturę futrzastą o nowe dziedziny sztuki jakich w naszym kraju jeszcze nie widziano. Ah i jescze jedno~ SCREEEEEEEEEEEEEEEEEEEEEEEEEEE!!!!!',
+    icon: 'assets/staff/nova.webp',
+  },
+  {
+    name: 'Paulina "Komatsu" Siembida',
+    titl: 'Członek Zarządu',
+    desc: 'Ekstrawertyczna smoko-ćma. ratol i artysta wszelkiej maści. Postanowiła spożytkować swoje umiejętności, znajomości i wiedzę oraz wolny czas, aby przysłużyć się pomocnym skrzydłem polskiemu środowisku Furry. I na razie dobrze się w tym bawi.',
+    icon: '/assets/staff/komatsu.webp'
+  },
+  {
+    name: 'Jacek "Jaorek" Orłowski',
+    titl: 'Członek Zarządu',
+    desc: 'Heju z tej strony Śnieżny Leopard który bardzo lubi w wolnym czasie siedzieć w papierach i przepisach prawa. W stowarzyszeniu zajmuje się sekcją księgową i dbam o nasze dokumenty. Chętnie zawsze podam pomocną łapę. Prywatnie za to studiuję Architekturę a w przyszłości planuje Pielęgniarstwo.',
+    icon: 'assets/staff/jaorek.webp',
+  },
+];
+// Audit committee
+const comitteeData = [
+  {
+    name: 'Marcin "Obey138" Wojtarowicz',
+    titl: 'Przewodniczący Komisji Rewizyjnej',
+    desc: 'Czujne kocie oko, spoglądające ukradkiem na działanie całego stowarzyszenia i przypominające mu o obowiązkach. Prywatnie spokojny, wycofany. Z zawodu ochrona fizyczna, w wolnym czasie zajmuje się miksowaniem jako DJ, pomaganiem przy konwentach oraz głaskaniem kotów. Miał miał miał!',
+    icon: '/assets/staff/obey.webp',
+
+  },
+  // {
+  //   name: 'Patryk "Keijo" Jaworski',
+  //   titl: 'Członek Komisji Rewizyjnej',
+  //   desc: 'Komik, jaskiniowiec komputerowy, specjalista od Linuxa, fursuiter, w przyszłości może artysta. Zawodowo inżynier DevOps. Lubi pomagać, zajmować sie technologią, muzyką i tematami wokół. Nie lubi przelotnych trendów na świecie. Jeśli masz jakiś temat który chcesz przegadać z Keijo, nie bój się zagadać.',
+  //   icon: 'assets/staff/keijo.webp'
+  // },
+  {
+    name: 'Oskar "Rakso" Janecki',
+    titl: 'Członek Komisji Rewizyjnej',
+    desc: 'Energiczny lis będący na co dzień zapalonym fanem programowania, WebDevu i wszystkiego, co ma związek z branżą IT, oraz elektroniką. W stowarzyszeniu członek komisji rewizyjnej starający się rozwijać i zdobywać nowe umiejętności wspomagając polską furkulturę.',
+    icon: 'assets/staff/rakso.webp',
+  },
+  {
+    name: 'Stanisław "Kazi" Samuel',
+    titl: 'Członek Komisji Rewizyjnej',
+    desc: 'Z niknąd zorganizuje pełne zabezpieczenie wydarzenia i zadba o porzadek w dokumentach. Prywatnie uwielbia długie rozmowy i poranną kawę w dobrym towarzystwie.',
+    icon: '/assets/staff/kazi.webp',
+  },
+  {
+    name: 'Leonard "Assalt" Jamróz',
+    titl: 'Członek Komisji Rewizyjnej',
+    desc: 'Typowy lis informatyk. Z bonusowych umiejętności mechanik elektronik i organizator konwentów. Jeżeli przyjdziesz, otwarcie po pomoc to wyciągnie ci rozwiązanie spod ziemi. A coś więcej? Podejdź, zagadaj, lisy znane są z bycia przyjaznymi wobec wszystkich gatunków i nigdy nie warczą ani nie gryzą. No, chyba że trzeba podszczypać dla zabawy.',
+    icon: '/assets/staff/assalt.webp'
+  }
 ];
 ---
 
 <Layout title="Stowarzyszenie OwO">
   <TopMenu/>
-  <Page>
-    <div
-        class="h-full flex-grow flex flex-col items-center justify-center bg-gradient-to-tr from-owopurple-500 to-owopurple-800">
-      <img src="/assets/logo.svg" alt="Logo" class="max-w-80 w-full px-4">
-      <p class="mt-2 p-2 font-bold text-4xl text-center">WSPIERAMY FURKULTURĘ</p>
-    </div>
-    <div class="absolute w-full bottom-4 flex flex-row justify-center items-center">
-      <a class="ml-auto mr-auto hover:scale-105 transition duration-100" href="#start">
-        <img src="/assets/arrow-down.svg" alt="" class="w-12 animate-bounce">
-      </a>
-    </div>
-  </Page>
-  <div id="start" class="mb-32"/>
-  <!--<HtmlPanel>-->
-  <!--  <h2 class="text-center font-bold text-4xl uppercase mb-4">kim jesteśmy</h2>-->
-  <!--  <img src="/public/assets/logo_dark.webp" class="h-48 float-left mr-4 mb-2">-->
-  <!--  <p class="font-semibold">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium architecto beatae-->
-  <!--    cupiditate doloremque-->
-  <!--    illum laborum libero odit praesentium saepe sit. A accusamus aliquid, aspernatur consectetur error expedita-->
-  <!--    explicabo facere id, iure nesciunt nostrum omnis perferendis similique sint tempore ullam voluptatibus.-->
-  <!--    Asperiores-->
-  <!--    dicta excepturi minima totam vero? Consectetur consequatur, inventore. Fugiat impedit maxime nam nisi quam!-->
-  <!--    Consequatur, est ex magnam minus nemo nostrum praesentium rerum. Aliquam assumenda corporis incidunt non officia-->
-  <!--    omnis ratione tempora totam! Dolor doloribus ducimus eum facilis laudantium magni possimus quaerat! At, corporis-->
-  <!--    cumque delectus distinctio dolores doloribus, earum enim expedita explicabo facilis id incidunt, iusto magnam-->
-  <!--    modi-->
-  <!--    obcaecati odio officia officiis placeat quae quia quo sequi sunt temporibus vero voluptates. Delectus deserunt-->
-  <!--    dicta, ex fugiat recusandae reiciendis.</p>-->
-  <!--</HtmlPanel>-->
-  <!--<Page id="start">-->
-  <!--  <div class="h-full flex flex-col items-center justify-center">-->
-  <!--    <h1 class="bg-amber-700 p-2 font-bold">Second Page</h1>-->
-  <!--  </div>-->
-  <!--</Page>-->
+  <div class="z-10">
+    <Page>
+      <div class="h-full flex-grow flex flex-col items-center justify-center bg-gradient-to-tr from-owopurple-500 to-owopurple-800">
+        <img src="/assets/logo.svg" alt="Logo" class="max-w-80 w-full px-4">
+        <p class="mt-2 p-2 font-bold text-3xl md:text-4xl text-center">WSPIERAMY FURKULTURĘ</p>
+      </div>
+      <div class="absolute w-full bottom-4 flex flex-row justify-center items-center">
+        <a class="ml-auto mr-auto hover:scale-105 transition duration-100" href="#start">
+          <img src="/assets/icons/arrow-down.svg" alt="Arrow Down Icon" class="w-12 animate-bounce">
+        </a>
+      </div>
+    </Page>
+    <!-- <div id="start" class="mb-32"/>
+    <HtmlPanel>
+      <h2 class="text-center font-bold text-4xl uppercase mb-4">kim jesteśmy</h2>
+      <img src="/public/assets/logo_dark.webp" class="h-48 float-left mr-4 mb-2">
+      <p class="font-semibold">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium architecto beatae
+        cupiditate doloremque
+        illum laborum libero odit praesentium saepe sit. A accusamus aliquid, aspernatur consectetur error expedita
+        explicabo facere id, iure nesciunt nostrum omnis perferendis similique sint tempore ullam voluptatibus.
+        Asperiores
+        dicta excepturi minima totam vero? Consectetur consequatur, inventore. Fugiat impedit maxime nam nisi quam!
+        Consequatur, est ex magnam minus nemo nostrum praesentium rerum. Aliquam assumenda corporis incidunt non officia
+        omnis ratione tempora totam! Dolor doloribus ducimus eum facilis laudantium magni possimus quaerat! At, corporis
+        cumque delectus distinctio dolores doloribus, earum enim expedita explicabo facilis id incidunt, iusto magnam
+        modi
+        obcaecati odio officia officiis placeat quae quia quo sequi sunt temporibus vero voluptates. Delectus deserunt
+        dicta, ex fugiat recusandae reiciendis.</p>
+    </HtmlPanel>
+    <Page id="start">
+      <div class="h-full flex flex-col items-center justify-center">
+        <h1 class="bg-amber-700 p-2 font-bold">Second Page</h1>
+      </div>
+    </Page> -->
 
-  <div id="contact-us" class="mb-24"/>
-  <h2 class="text-center font-bold text-4xl uppercase mb-4 text-owowhite p-4">gdzie nas znaleźć</h2>
-  <Links links={socialsData}/>
-
-  <div id="links" class="mb-24"/>
-  <HtmlPanel>
-    <div class="flex flex-col justify-center items-center">
-      <h2 class="text-center font-bold text-4xl uppercase mb-4">ważne linki</h2>
-      <!--//TODO: dodać do linków opcję negatywu (zamiast jasne ciemne)-->
-      <Links negative links={linkData}/>
+    <div id="social-media" class="mb-24"/>
+    <h2 class="text-center font-bold text-3xl md:text-4xl uppercase mb-4 text-owowhite p-4">Gdzie nas znaleźć</h2>
+    <Links links={socialsData}/>
+  
+    <div id="links" class="mb-24"/>
+    <HtmlPanel>
+      <div class="flex flex-col justify-center items-center">
+        <h2 class="text-center font-bold text-3xl md:text-4xl uppercase mb-4">Ważne linki</h2>
+        <Links negative links={linksData}/>
+      </div>
+    </HtmlPanel>
+  
+    <div id="stuff" class="pt-24 flex flex-col gap-24">
+      <Staff people={boardData} title="Zarząd Stowarzyszenia"/>
+      <Staff people={comitteeData} title="Komisja Rewizyjna"/>
     </div>
-  </HtmlPanel>
-
-  <div id="stuff" class="pt-24 flex flex-col gap-24">
-    <Staff people={zarzadData} title="Zarząd Stowarzyszenia"/>
-    <Staff people={peopleData} title="Komisja Rewizyjna"/>
   </div>
 
 </Layout>
