@@ -33,5 +33,5 @@ jobs:
           context: .
           push: true
           tags: |
-            ${{ github.repository }}:${{ steps.vars.outputs.branch }}
-            ${{ github.repository }}:latest
+            ghcr.io/${{ github.repository }}:${{ steps.vars.outputs.branch }}
+            ghcr.io/${{ github.repository }}:latest
