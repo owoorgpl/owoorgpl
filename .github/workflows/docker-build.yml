@@ -1,0 +1,41 @@
+name: Build Docker Image
+on: workflow_dispatch
+
+jobs:
+  build-image:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+    steps:
+      # Checkout
+      - name: Checkout website
+        uses: actions/checkout@v4
+      
+      # Branch and tag
+      - name: Get branch and tag vars
+        shell: bash
+        run: |
+          echo "branch=${GITHUB_HEAD_REF:-${GITHUB_REF#refs/heads/}}" >> $GITHUB_OUTPUT
+          echo "Branch: ${{ steps.vars.outputs.branch }}"
+          echo "tag=${GITHUB_REF#refs/tags/}" >> $GITHUB_OUTPUT
+          echo "Tag: ${{ steps.vars.outputs.branch }}"
+        id: vars
+
+      # Prepare
+      - name: Login to GHCR registry
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+      
+      # Build and push
+      - name: Build and push
+        uses: docker/build-push-action@v5
+        with: 
+          context: .
+          push: true
+          tags: |
+            ${{ secrets.DOCKER_USER }}/owoorgpl:${{ steps.vars.outputs.branch }}
+            ${{ secrets.DOCKER_USER }}/owoorgpl:latest
