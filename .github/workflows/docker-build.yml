@@ -12,18 +12,11 @@ jobs:
       - name: Checkout website
         uses: actions/checkout@v4
       
-      # Branch and tag
+      # Branch
       - name: Get branch and tag vars
         shell: bash
-        run: |
-          echo "branch=${GITHUB_HEAD_REF:-${GITHUB_REF#refs/heads/}}" >> $GITHUB_OUTPUT
-          echo "tag=${GITHUB_REF#refs/tags/}" >> $GITHUB_OUTPUT
+        run: echo "branch=${GITHUB_HEAD_REF:-${GITHUB_REF#refs/heads/}}" >> $GITHUB_OUTPUT
         id: vars
-      - name: Display branch and tag vars
-        shell: bash
-        run: |
-          echo "Branch: ${{ steps.vars.outputs.branch }}"
-          echo "Tag: ${{ steps.vars.outputs.tag }}"
 
       # Prepare
       - name: Login to GHCR registry
@@ -40,5 +33,5 @@ jobs:
           context: .
           push: true
           tags: |
-            ${{ github.actor }}/owoorgpl:${{ steps.vars.outputs.branch }}
-            ${{ github.actor }}/owoorgpl:latest
+            ${{ github.repository }}:${{ steps.vars.outputs.branch }}
+            ${{ github.repository }}:latest
