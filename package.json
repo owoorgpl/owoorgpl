@@ -1,5 +1,5 @@
 {
-  "name": "OwO Association Website",
+  "name": "OwO_Association_Website",
   "type": "module",
   "version": "1.0.0",
   "scripts": {
@@ -12,6 +12,7 @@
   "dependencies": {
     "@astrojs/check": "^0.9.4",
     "@astrojs/tailwind": "^5.1.2",
+    "@astropub/md": "^1.0.0",
     "astro": "^4.16.15",
     "cross-spawn": "^7.0.6",
     "micromatch": "^4.0.8",
