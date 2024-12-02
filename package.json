@@ -12,9 +12,9 @@
   "dependencies": {
     "@astrojs/check": "^0.9.4",
     "@astrojs/tailwind": "^5.1.2",
-    "@astropub/md": "^1.0.0",
     "astro": "^4.16.15",
     "cross-spawn": "^7.0.6",
+    "markdown-it": "^14.1.0",
     "micromatch": "^4.0.8",
     "tailwindcss": "^3.4.15",
     "typescript": "^5.7.2"
