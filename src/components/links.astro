@@ -11,10 +11,10 @@ interface Props {
 const {links, negative}: Props = Astro.props;
 ---
 
-<div class="flex flex-col gap-6 items-center justify-between m-4">
+<div class="flex flex-col gap-6 items-center justify-between m-4 w-full">
   {links.map((link) =>
       <a href={link.link} target="_blank" data-negative={negative ? 'true' : 'false'}
-         class="flex font-bold rounded-lg md:text-lg h-25 p-3 bg-owowhite [&[data-negative='true']]:bg-owopurple-800 bg-opacity-70 text-owopurple-800 [&[data-negative='true']]:text-owowhite transition duration-150 hover:scale-105 w-full max-w-xs items-center justify-center"><img
-          src={link.icon} alt="Icon" loading="lazy" class="w-6 h-6 p-1">{link.name}</a>
+         class="flex font-bold rounded-lg md:text-lg h-25 p-3 bg-owowhite [&[data-negative='true']]:bg-owopurple-800 bg-opacity-70 text-owopurple-800 [&[data-negative='true']]:text-owowhite transition duration-150 hover:scale-105 w-full max-w-sm items-center justify-center"><img
+          src={link.icon} alt="Icon" loading="lazy" class="w-8 h-8 p-1 pr-1.5">{link.name}</a>
   )}
 </div>

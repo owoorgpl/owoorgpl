@@ -5,8 +5,9 @@ export default {
         extend: {
             colors: {
                 owopurple: {
-                    500: '#6E3C8F',
-                    800: '#49295E'
+                    500: '#9c4ec6',
+                    800: '#3d1652',
+                    900: '#421858'
                 },
                 owoblue: {
                     200: '#C2F9FF'
