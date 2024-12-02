@@ -18,5 +18,8 @@ export default {
             city: ["city", "Clarity City"],
         }
     },
-    plugins: [],
+    plugins: [
+        require("tailwindcss-animate"),
+        require("tailwindcss-animation-delay")
+    ],
 }
