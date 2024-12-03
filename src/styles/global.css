@@ -5,21 +5,21 @@
 
 @font-face {
     font-family: "Clarity City";
-    src: url("/public/fonts/ClarityCity-Bold.otf") format("opentype");
+    src: url("/public/fonts/claritycity-bold.otf") format("opentype");
     font-weight: bold;
     font-style: normal;
 }
 
 @font-face {
     font-family: "Clarity City";
-    src: url("/public/fonts/ClarityCity-RegularItalic.otf.otf") format("opentype");
+    src: url("/public/fonts/claritycity-regularitalic.otf") format("opentype");
     font-weight: normal;
     font-style: italic;
 }
 
 @font-face {
     font-family: "Clarity City";
-    src: url("/public/fonts/ClarityCity-Regular.otf") format("opentype");
+    src: url("/public/fonts/claritycity-regular.otf") format("opentype");
     font-weight: normal;
     font-style: normal;
 }

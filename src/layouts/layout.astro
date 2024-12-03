@@ -9,7 +9,7 @@ const { title } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="pl" class="scroll-smooth">
+<html lang="pl" class="scroll-smooth overflow-x-hidden">
 	<head>
 		<title>{title}</title>
     <meta charset="utf-8">
@@ -21,7 +21,7 @@ const { title } = Astro.props;
     <meta name="robots" content="index, follow, archive">
     <link rel="icon" type="image/webp" href="/favicon.webp">
   </head>
-	<body class="overflow-x-clip min-h-svh flex flex-col bg-owopurple-800 text-owowhite font-city">
+	<body class="overflow-x-hidden min-h-svh flex flex-col bg-owopurple-800 text-owowhite font-city">
   <div class="flex flex-col grow">
     <slot />
   </div>
