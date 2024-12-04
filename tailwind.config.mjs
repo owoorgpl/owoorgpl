@@ -7,7 +7,7 @@ export default {
                 owopurple: {
                     500: '#9c4ec6',
                     800: '#3d1652',
-                    900: '#421858'
+                    900: '#421858',
                 },
                 owoblue: {
                     200: '#C2F9FF'
