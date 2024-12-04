@@ -22,7 +22,8 @@ const { title } = Astro.props;
     <link rel="icon" type="image/webp" href="/favicon.webp">
     <link rel="preload" as="image" href="/assets/logo.svg">
   </head>
-	<body class="overflow-x-hidden min-h-svh flex flex-col bg-owopurple-800 text-owowhite font-city">
+	<body class="overflow-x-hidden min-h-svh flex flex-col text-owowhite font-city">
+  <div class="fixed top-0 left-0 h-screen w-screen bg-gradient-to-tr from-owopurple-900 to-owopurple-800"/>
   <div class="z-10 flex flex-col grow">
     <slot />
   </div>
