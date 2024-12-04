@@ -24,7 +24,19 @@
     font-style: normal;
 }
 
+/*@font-face {*/
+/*    font-family: "Hand Me Down";*/
+/*    src: url("/public/fonts/handmeds.ttf") format("truetype");*/
+/*    font-weight: normal;*/
+/*    font-style: normal;*/
+/*}*/
 
+@font-face {
+    font-family: "Coming Soon";
+    src: url("/public/fonts/coming-soon-regular.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
 
 ::-webkit-scrollbar {
     width: 6px;

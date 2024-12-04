@@ -17,6 +17,8 @@ export default {
         },
         fontFamily: {
             city: ["city", "Clarity City"],
+            // hand: ["hand", "Hand Me Down"],
+            hand: ["hand", "Coming Soon"],
         }
     },
     plugins: [

@@ -6,8 +6,14 @@ interface Props {
 const {}: Props = Astro.props;
 ---
 
-<div class="relative mt-24 md:mt-96 w-full md:h-44 p-4 bg-owowhite bg-opacity-70 text-owopurple-800 flex items-center justify-center">
-  <img src="/assets/logo-bottom.svg" alt="Logo" loading="lazy" class="/*absolute*/ fixed w-full max-w-[36rem] right-0 bottom-0 z-0">
+<div
+    class="relative mt-24 md:mt-96 w-full md:h-44 p-4 bg-owowhite bg-opacity-70 text-owopurple-800 flex items-center justify-center">
+  <img src="/assets/logo-bottom.svg" alt="Logo" loading="lazy"
+       class="/*absolute*/ fixed w-full max-w-[36rem] right-0 bottom-0 z-0">
+
+  <div class='-top-[40px] h-[30px] bg-left bg-contain absolute bg-[url("/public/assets/dragon_egg.webp")] bg-repeat-x w-full'>
+  </div>
+
   <div class="flex flex-col md:flex-row gap-6 md:gap-0 grow justify-around z-10">
     <div>
       <p class="font-extrabold text-center md:text-start">
@@ -26,7 +32,8 @@ const {}: Props = Astro.props;
     <div>
       <p class="font-extrabold text-center md:text-start">
         <a class="underline hover:text-owopurple-500" href="https://statut.owo.org.pl">Statut Stowarzyszenia</a><br/>
-        <a class="underline hover:text-owopurple-500" href="https://som.owo.org.pl">Standardy Ochrony Małoletnich</a><br/>
+        <a class="underline hover:text-owopurple-500" href="https://som.owo.org.pl">Standardy Ochrony
+          Małoletnich</a><br/>
         <a class="underline hover:text-owopurple-500" href="/policy">Polityka Prywatności</a>
       </p>
     </div>
