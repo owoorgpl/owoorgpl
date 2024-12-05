@@ -15,8 +15,8 @@ const {links, negative}: Props = Astro.props;
 
 <div class="flex flex-col gap-6 items-center justify-between p-4 w-full grow">
   {links.map((link, i) => {
-      const dragonPath = negative ? '/public/assets/smok_dark.webp' : '/public/assets/smok_light.webp';
-      const tailPath = negative ? ['/public/assets/rogi_dark.webp', '/public/assets/ogon_dark.webp'] : ['/public/assets/rogi_light.webp', '/public/assets/ogon_light.webp'];
+      const dragonPath = negative ? '/assets/smok_dark.webp' : '/assets/smok_light.webp';
+      const tailPath = negative ? ['/assets/rogi_dark.webp', '/assets/ogon_dark.webp'] : ['/assets/rogi_light.webp', '/assets/ogon_light.webp'];
       const dragonOffset = (Math.random()*50+30).toString();
 
       return (<div data-dragon={link.dragon ? 'true' : 'false'} class="[&[data-dragon='true']]:mt-1 w-full max-w-sm relative scale-100 hover:scale-105 transition duration-150 z-10">
