@@ -3,7 +3,9 @@ interface Props {
   links: {
     name: string;
     link: string;
-    icon: string;
+    icon?: string;
+    dragon?: boolean;
+    tail?: boolean;
   }[];
   negative?: boolean;
 }
@@ -12,9 +14,25 @@ const {links, negative}: Props = Astro.props;
 ---
 
 <div class="flex flex-col gap-6 items-center justify-between p-4 w-full grow">
-  {links.map((link) =>
-      <a href={link.link} target="_blank" data-negative={negative ? 'true' : 'false'}
-         class="flex font-bold rounded-lg md:text-lg h-25 p-3 bg-owowhite [&[data-negative='true']]:bg-owopurple-700 bg-opacity-70 text-owopurple-700 [&[data-negative='true']]:text-owowhite transition duration-150 hover:scale-105 w-full max-w-sm items-center justify-center"><img
-          src={link.icon} alt="Icon" loading="lazy" class="w-8 h-8 p-1 pr-1.5">{link.name}</a>
+  {links.map((link, i) => {
+      const dragonPath = negative ? '/public/assets/smok_dark.webp' : '/public/assets/smok_light.webp';
+      const tailPath = negative ? ['/public/assets/rogi_dark.webp', '/public/assets/ogon_dark.webp'] : ['/public/assets/rogi_light.webp', '/public/assets/ogon_light.webp'];
+      const dragonOffset = (Math.random()*50+30).toString();
+
+      return (<div data-dragon={link.dragon ? 'true' : 'false'} class="[&[data-dragon='true']]:mt-1 w-full max-w-sm relative scale-100 hover:scale-105 transition duration-150 z-10">
+        <a href={link.link} target="_blank" data-negative={negative ? 'true' : 'false'}
+                 class="flex font-bold rounded-lg overflow-visible md:text-lg h-25 p-3 bg-[#c2b7c8] [&[data-negative='true']]:bg-owopurple-700 bg-opacity-100 text-owopurple-700 [&[data-negative='true']]:text-owowhite w-full items-center justify-center z-20">
+        {link.icon ? <img src={link.icon} alt="Icon" loading="lazy" class="w-8 h-8 p-1 pr-1.5"> : null}
+        {link.name}
+        {link.dragon ? <img alt="dragon" src={dragonPath} style=`--offset: ${dragonOffset}%`
+                            class="absolute left-[--offset] -top-[24px] h-8 z-30 overflow-visible"> : null}
+
+      </a>
+        {link.tail ? <img alt="ears" src={tailPath[0]}
+                          class="absolute -left-0 -z-10 -top-[18px] h-6 overflow-visible"> : null}
+        {link.tail ? <img alt="tail" src={tailPath[1]}
+                          class="absolute -right-[20px] -z-10 -bottom-[20px] h-8 overflow-visible"> : null}
+      </div>);
+    }
   )}
 </div>
