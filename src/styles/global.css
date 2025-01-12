@@ -1,0 +1,59 @@
+/* tailwind.config.js  */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: "Clarity City";
+    src: url("/public/fonts/claritycity-bold.otf") format("opentype");
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Clarity City";
+    src: url("/public/fonts/claritycity-regularitalic.otf") format("opentype");
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "Clarity City";
+    src: url("/public/fonts/claritycity-regular.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+/*@font-face {*/
+/*    font-family: "Hand Me Down";*/
+/*    src: url("/public/fonts/handmeds.ttf") format("truetype");*/
+/*    font-weight: normal;*/
+/*    font-style: normal;*/
+/*}*/
+
+@font-face {
+    font-family: "Coming Soon";
+    src: url("/public/fonts/coming-soon-regular.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: hsl(205, 100%, 21%);
+}
+
+::-webkit-scrollbar-thumb {
+    background: hsl(279, 49%, 56%);
+    border-radius: 30px;
+    transition: 200ms;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: hsl(279, 49%, 60%);
+    transition: 200ms;
+}

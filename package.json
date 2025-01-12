@@ -1,5 +1,5 @@
 {
-  "name": "OwO Association Website",
+  "name": "OwO_Association_Website",
   "type": "module",
   "version": "1.0.0",
   "scripts": {
@@ -14,9 +14,14 @@
     "@astrojs/tailwind": "^5.1.2",
     "astro": "^4.16.15",
     "cross-spawn": "^7.0.6",
+    "markdown-it": "^14.1.0",
     "micromatch": "^4.0.8",
     "tailwindcss": "^3.4.15",
     "typescript": "^5.7.2"
   },
-  "packageManager": "yarn@1.22.22+sha1.ac34549e6aa8e7ead463a7407e1c7390f61a6610"
+  "packageManager": "yarn@1.22.22+sha1.ac34549e6aa8e7ead463a7407e1c7390f61a6610",
+  "devDependencies": {
+    "tailwindcss-animate": "^1.0.7",
+    "tailwindcss-animation-delay": "^2.0.1"
+  }
 }

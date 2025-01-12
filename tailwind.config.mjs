@@ -5,8 +5,10 @@ export default {
         extend: {
             colors: {
                 owopurple: {
-                    500: '#6E3C8F',
-                    800: '#49295E'
+                    500: '#9c4ec6',
+                    700: '#3d1652',
+                    800: '#421858',
+                    900: '#2d0c3d',
                 },
                 owoblue: {
                     200: '#C2F9FF'
@@ -16,7 +18,12 @@ export default {
         },
         fontFamily: {
             city: ["city", "Clarity City"],
+            // hand: ["hand", "Hand Me Down"],
+            hand: ["hand", "Coming Soon"],
         }
     },
-    plugins: [],
+    plugins: [
+        require("tailwindcss-animate"),
+        require("tailwindcss-animation-delay")
+    ],
 }
