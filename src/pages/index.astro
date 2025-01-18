@@ -6,6 +6,7 @@ import Links from '../components/links.astro';
 import Staff from '../components/staff-list.astro';
 import HtmlPanel from '../components/html-panel.astro';
 import Payment from '../components/payment.astro';
+import SiteDescription from '../components/site-description.astro';
 
 
 // Social Media
@@ -41,6 +42,12 @@ const socialsData = [
 // Links
 const linksData = [
   {
+    name: 'Członkostwo',
+    icon: '/assets/icons/person-rounded.svg',
+    link: 'https://forum.owo.org.pl/t/jak-dolaczyc-do-stowarzyszenia',
+    dragon: true,
+  },
+  {
     name: 'Statut Stowarzyszenia',
     icon: '/assets/icons/book.svg',
     link: 'https://statut.owo.org.pl'
@@ -49,7 +56,7 @@ const linksData = [
     name: 'Standardy Ochrony Małoletnich',
     icon: '/assets/icons/book.svg',
     link: 'https://som.owo.org.pl',
-    dragon: true
+    tail: true
   },
   {
     name: 'Polityka Prywatności',
@@ -65,7 +72,7 @@ const linksData = [
     name: 'E-mail Komisja Rewizyjna',
     icon: '/assets/icons/mail-share.svg',
     link: 'mailto:komisja-rewizyjna@owo.org.pl',
-    tail: true
+    dragon: true
   }
 ];
 // Board
@@ -174,6 +181,7 @@ const comitteeData = [
           <img src="/assets/icons/arrow-down.svg" alt="Arrow Down Icon" class="w-12 animate-bounce">
         </a>
       </div>
+      
     </Page>
     <div id="start" class="mb-32"/>
     <!-- <HtmlPanel>
@@ -201,14 +209,18 @@ const comitteeData = [
     <div id="social-media" class="mb-24"/>
     <h2 class="text-center font-bold text-3xl md:text-4xl uppercase mb-4 text-owowhite p-4">Gdzie nas znaleźć</h2>
     <Links links={socialsData}/>
-  
+            <!-- opis strony -->
+        <div class="flex w-auto h-auto"><SiteDescription /></div>
+            <!-- opis strony -->
     <div id="links" class="mb-24"/>
     <HtmlPanel>
       <div class="flex flex-col justify-center items-center">
         <h2 class="text-center font-bold text-3xl md:text-4xl uppercase mb-4">Ważne linki</h2>
         <Links negative links={linksData}/>
+
       </div>
     </HtmlPanel>
+    
   
     <div id="stuff" class="pt-24 flex flex-col gap-24 mb-24">
       <Staff people={boardData} title="Zarząd Stowarzyszenia"/>
