@@ -5,6 +5,7 @@ import TopMenu from '../components/top-menu.astro';
 import Links from '../components/links.astro';
 import Staff from '../components/staff-list.astro';
 import HtmlPanel from '../components/html-panel.astro';
+import Payment from '../components/payment.astro';
 
 
 // Social Media
@@ -209,8 +210,12 @@ const comitteeData = [
       </div>
     </HtmlPanel>
   
-    <div id="stuff" class="pt-24 flex flex-col gap-24">
+    <div id="stuff" class="pt-24 flex flex-col gap-24 mb-24">
       <Staff people={boardData} title="Zarząd Stowarzyszenia"/>
       <Staff people={comitteeData} title="Komisja Rewizyjna"/>
+    </div>
+
+    <div id="payment" class="mx-auto">
+      <Payment/>
     </div>
 </Layout>
