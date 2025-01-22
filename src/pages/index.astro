@@ -5,7 +5,7 @@ import TopMenu from '../components/top-menu.astro';
 import Links from '../components/links.astro';
 import Staff from '../components/staff-list.astro';
 import HtmlPanel from '../components/html-panel.astro';
-import SiteDescription from '../components/site-description.astro';
+
 
 
 
@@ -187,19 +187,31 @@ const comitteeData = [
     <HtmlPanel>
       <h2 class="text-center font-bold text-4xl uppercase mb-4">kim jesteśmy</h2>
       <img src="/public/assets/logo-dark.webp" class="h-48 float-left mr-4 mb-2">
-      <p class="font-semibold md-text">Stowarzyszenie OwO to organizacja, która powstała, by wspierać ludzi zainteresowanych kulturą furry – to społeczność miłośników postaci łączących cechy ludzi i zwierząt. Chcemy pomagać im się integrować, rozwijać swoje pasje i czuć się akceptowanymi.<br>
-        Nasze cele:<br><br>
-    
-            Budowanie społeczności – organizujemy spotkania, warsztaty i wydarzenia, które łączą ludzi o podobnych zainteresowaniach.<br>
-            Promowanie kultury furry – pokazujemy, że to ciekawa i wartościowa forma twórczości, np. poprzez sztukę, tworzenie strojów (fursuitów) czy inne działania artystyczne.<br>
-            Walka z dyskryminacją i szerzenie tolerancji – uczymy otwartości, zrozumienia i akceptacji dla innych.<br>
-            Pomoc i wsparcie – wspieramy osoby potrzebujące pomocy, organizujemy zbiórki i działania charytatywne, a także promujemy zdrowy styl życia.<br>
-            <br>
-        Jak działamy?<br>
-          <br>
-        Organizujemy różnego rodzaju wydarzenia – od lokalnych spotkań po większe imprezy. Tworzymy przestrzeń, gdzie każdy może wyrazić siebie, znaleźć przyjaciół i rozwijać swoje pasje. Działamy na rzecz ochrony zwierząt, dbamy o środowisko i wspieramy twórczość artystyczną. Naszym celem jest, by każdy mógł poczuć się częścią otwartej i przyjaznej społeczności.<br>
-        W skrócie – jesteśmy tu, by łączyć ludzi, inspirować ich i wspierać w robieniu tego, co kochają! 😊
-        </p>
+      <p class="font-semibold md-text">
+        Stowarzyszenie OwO to organizacja, która powstała, by wspierać ludzi zainteresowanych kulturą furry – to społeczność miłośników postaci łączących cechy ludzi i zwierząt.<br>
+        Chcemy pomagać im się integrować, rozwijać swoje pasje i czuć się akceptowanymi.<br>
+
+        Nasze cele:<br>
+          <ul class='m-3 font-semibold md-text' style="list-style-type:disc">
+            <li>Budowanie społeczności – organizujemy spotkania, warsztaty i wydarzenia, które łączą ludzi o podobnych zainteresowaniach.</li>
+            <li>Promowanie kultury furry – pokazujemy, że to ciekawa i wartościowa forma twórczości, np. poprzez sztukę, tworzenie strojów (fursuitów) czy inne działania artystyczne.</li>
+            <li>Walka z dyskryminacją i szerzenie tolerancji – uczymy otwartości, zrozumienia i akceptacji dla innych.</li>
+            <li>Pomoc i wsparcie – wspieramy osoby potrzebujące pomocy, organizujemy zbiórki i działania charytatywne, a także promujemy zdrowy styl życia</li>
+          </ul>
+
+          <div class="font-semibold md-text">
+            Jak działamy?<br>
+            Organizujemy różnego rodzaju wydarzenia – od lokalnych spotkań po większe imprezy.<br>
+            Tworzymy przestrzeń, gdzie każdy może wyrazić siebie, znaleźć przyjaciół i rozwijać swoje pasje.<br>
+            Działamy na rzecz ochrony zwierząt, dbamy o środowisko i wspieramy twórczość artystyczną.<br>
+            Naszym celem jest, by każdy mógł poczuć się częścią otwartej i przyjaznej społeczności.<br>
+          </div>
+
+
+
+
+      </p>
+        
     </HtmlPanel>
 
     <div id="social-media" class="mb-24"/>
