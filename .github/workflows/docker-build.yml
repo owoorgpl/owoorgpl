@@ -1,5 +1,9 @@
 name: Build Docker Image
-on: workflow_dispatch
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - dev
 
 jobs:
   build-image:
@@ -35,3 +39,12 @@ jobs:
           tags: |
             ghcr.io/${{ github.repository }}:${{ steps.vars.outputs.branch }}
             ghcr.io/${{ github.repository }}:latest
+
+  deploy-to-dev:
+    if: github.ref == 'refs/heads/dev'
+    needs: build-image
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger deploy webhook
+        shell: bash
+        run: ${{ secrets.WEBHOOK_DEV }}
