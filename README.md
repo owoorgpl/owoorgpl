@@ -1,6 +1,6 @@
 # Strona Internetowa Stowarzyszenia OwO
 
-Repozytorium posiadające kod źródłowy do strony Stowarzyszenia [owo.org.pl](owo.org.pl).
+Repozytorium posiadające kod źródłowy do strony Stowarzyszenia [owo.org.pl](https://owo.org.pl).
 
 ## Komendy
 Wszystkie komendy są odpalane z głównego folderu projektu z terminala.
