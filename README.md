@@ -20,13 +20,13 @@ Dla nowych osób pracujących z repozytorium mamy parę porad i zasad projektu, 
 
 ### Nazwy branchy
 
-Branche oznaczamy czy to jest feature branch, czy branch zawierający fixy, czyli np. branch z nowym komponentem do picia herbaty nazywałby się `feature/tea-component`.
+Branche oznaczamy czy to jest feature branch, czy branch zawierający fixy, czyli np. branch z nowym komponentem do picia herbaty nazywałby się `feature/tea-component`, a jezeli naprawia herbatę na matche to `fix/tea-component-to-matcha`.
 
 ### Mergowanie i testowanie zmian
 
-Jeżeli skończyłeś/aś pracować nad swoją nową funckjonalnością i nie wywala całego systemu, zmerguj ją na branch `dev`. Następnie poproś kogoś z infrastruktury (@HaserWolf lub @Bonn333) o deploy na środowisko deweloperskie.
+Jeżeli skończyłeś/aś pracować nad swoją nową funckjonalnością i nie wywala całego systemu, zmerguj ją na branch `dev`. Nie trzymaj tam wersji roboczych swojego kodu, ma to być skończone i gotowe do końcowej weryfikacji.
 
-Jak wszystko pójdzie zgodnie z planem, nowe zmiany powinny być widoczne na [wersji deweloperskiej strony](https://mld.owo.org.pl/). Nazwa użytkownika i hasło są podane na chacie sekcji.
+Po jakimś czasie po merge'u na deva, nowe zmiany powinny być widoczne na [wersji deweloperskiej strony](https://mld.owo.org.pl/). Nazwa użytkownika i hasło są podane na chacie sekcji.
 
 ### Korzystanie z projektu z taskami
 
