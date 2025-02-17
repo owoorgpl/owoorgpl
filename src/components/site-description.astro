@@ -1,0 +1,46 @@
+---
+import HtmlPanel from "./html-panel.astro";
+---
+
+<HtmlPanel>
+    <h2 class="text-center font-bold text-4xl uppercase mb-4">kim jesteśmy</h2>
+    <section class="flex items-center justify-center gap-4 flex-wrap">
+        <img src="/assets/logo-without-shadow.png" class="h-48 float-left mr-4 mb-2">
+        <p class="font-semibold text-justify w-[500px]">
+            Stowarzyszenie OwO to organizacja, która powstała, by wspierać ludzi zainteresowanych subkulturą furry
+            – to społeczność miłośników postaci łączących cechy ludzi i zwierząt. Chcemy pomagać im się integrować, rozwijać swoje pasje i czuć się akceptowanymi.
+        </p>
+    </section>
+    <br class="md:hidden"/>
+    <p class="font-semibold text-xl">Nasze cele:</p>
+    <ul>
+        <li><span>Budowanie społeczności</span> – organizujemy i współorganizujemy spotkania, warsztaty i wydarzenia, które łączą ludzi o podobnych zainteresowaniach.</li>
+        <li><span>Promowanie subkultury furry</span> – pokazujemy, że to ciekawa i wartościowa forma twórczości, np. poprzez sztukę, tworzenie strojów (fursuitów) czy inne działania artystyczne.</li>
+        <li><span>Walka z dyskryminacją i szerzenie tolerancji</span> – uczymy otwartości, zrozumienia i akceptacji dla innych.</li>
+        <li><span>Pomoc i wsparcie</span> – wspieramy osoby potrzebujące pomocy, organizujemy zbiórki i działania charytatywne, a także promujemy zdrowy styl życia.</li>
+    </ul>
+    <br/>
+    <p class="font-semibold text-xl">Jak działamy?</p>
+    <p class="text-justify">
+        Organizujemy i współorganizujemy różnego rodzaju wydarzenia – od lokalnych spotkań po większe imprezy. Tworzymy przestrzeń, gdzie każdy może wyrazić siebie,
+        znaleźć przyjaciół i rozwijać swoje pasje. Działamy na rzecz ochrony zwierząt, dbamy o środowisko i wspieramy twórczość artystyczną.
+        Naszym celem jest, by każdy mógł poczuć się częścią otwartej i przyjaznej społeczności.
+    </p>
+    <br/>
+    <p class="text-justify">W skrócie – jesteśmy tu, by łączyć ludzi, inspirować ich i wspierać w robieniu tego, co kochają!</p>
+</HtmlPanel>
+
+<style>
+    span {
+        @apply font-semibold;
+    }
+
+    li {
+        @apply text-justify;
+
+        &::before {
+            content: "• ";
+            @apply font-bold;
+        }
+    }
+</style>

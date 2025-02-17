@@ -57,3 +57,19 @@
     background: hsl(279, 49%, 60%);
     transition: 200ms;
 }
+
+.owo-section {
+    @apply rounded-3xl owo-bg max-w-4xl w-full mx-auto my-6 min-h-24 text-owopurple-700 py-6 px-8;
+}
+
+.owo-bg {
+    @apply bg-owowhite/70;
+}
+
+.quote::before {
+ content: '\201E';
+}
+
+.quote::after {
+    content: '\201D';
+}

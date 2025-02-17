@@ -5,6 +5,8 @@ import TopMenu from '../components/top-menu.astro';
 import Links from '../components/links.astro';
 import Staff from '../components/staff-list.astro';
 import HtmlPanel from '../components/html-panel.astro';
+import Payment from '../components/payment.astro';
+import SiteDescription from '../components/site-description.astro';
 
 
 // Social Media
@@ -40,6 +42,12 @@ const socialsData = [
 // Links
 const linksData = [
   {
+    name: 'Członkostwo',
+    icon: '/assets/icons/person-rounded.svg',
+    link: 'https://forum.owo.org.pl/t/jak-dolaczyc-do-stowarzyszenia',
+    dragon: true,
+  },
+  {
     name: 'Statut Stowarzyszenia',
     icon: '/assets/icons/book.svg',
     link: 'https://statut.owo.org.pl'
@@ -48,7 +56,7 @@ const linksData = [
     name: 'Standardy Ochrony Małoletnich',
     icon: '/assets/icons/book.svg',
     link: 'https://som.owo.org.pl',
-    dragon: true
+    tail: true
   },
   {
     name: 'Polityka Prywatności',
@@ -64,7 +72,7 @@ const linksData = [
     name: 'E-mail Komisja Rewizyjna',
     icon: '/assets/icons/mail-share.svg',
     link: 'mailto:komisja-rewizyjna@owo.org.pl',
-    tail: true
+    dragon: true
   }
 ];
 // Board
@@ -173,25 +181,13 @@ const comitteeData = [
           <img src="/assets/icons/arrow-down.svg" alt="Arrow Down Icon" class="w-12 animate-bounce">
         </a>
       </div>
+      
     </Page>
     <div id="start" class="mb-32"/>
-    <!-- <HtmlPanel>
-      <h2 class="text-center font-bold text-4xl uppercase mb-4">kim jesteśmy</h2>
-      <img src="/public/assets/logo-dark.webp" class="h-48 float-left mr-4 mb-2">
-      <p class="font-semibold">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium architecto beatae
-        cupiditate doloremque
-        illum laborum libero odit praesentium saepe sit. A accusamus aliquid, aspernatur consectetur error expedita
-        explicabo facere id, iure nesciunt nostrum omnis perferendis similique sint tempore ullam voluptatibus.
-        Asperiores
-        dicta excepturi minima totam vero? Consectetur consequatur, inventore. Fugiat impedit maxime nam nisi quam!
-        Consequatur, est ex magnam minus nemo nostrum praesentium rerum. Aliquam assumenda corporis incidunt non officia
-        omnis ratione tempora totam! Dolor doloribus ducimus eum facilis laudantium magni possimus quaerat! At, corporis
-        cumque delectus distinctio dolores doloribus, earum enim expedita explicabo facilis id incidunt, iusto magnam
-        modi
-        obcaecati odio officia officiis placeat quae quia quo sequi sunt temporibus vero voluptates. Delectus deserunt
-        dicta, ex fugiat recusandae reiciendis.</p>
-    </HtmlPanel>
-    <Page id="start">
+    
+    <SiteDescription/>
+
+    <!-- <Page id="start">
       <div class="h-full flex flex-col items-center justify-center">
         <h1 class="bg-amber-700 p-2 font-bold">Second Page</h1>
       </div>
@@ -200,7 +196,7 @@ const comitteeData = [
     <div id="social-media" class="mb-24"/>
     <h2 class="text-center font-bold text-3xl md:text-4xl uppercase mb-4 text-owowhite p-4">Gdzie nas znaleźć</h2>
     <Links links={socialsData}/>
-  
+
     <div id="links" class="mb-24"/>
     <HtmlPanel>
       <div class="flex flex-col justify-center items-center">
@@ -208,9 +204,14 @@ const comitteeData = [
         <Links negative links={linksData}/>
       </div>
     </HtmlPanel>
+    
   
-    <div id="stuff" class="pt-24 flex flex-col gap-24">
+    <div id="stuff" class="pt-24 flex flex-col gap-24 mb-24">
       <Staff people={boardData} title="Zarząd Stowarzyszenia"/>
       <Staff people={comitteeData} title="Komisja Rewizyjna"/>
+    </div>
+
+    <div id="payment" class="mx-auto">
+      <Payment/>
     </div>
 </Layout>
