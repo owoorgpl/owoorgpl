@@ -1,0 +1,11 @@
+services:
+  owoorgpl:
+    container_name: owoorgpl
+    build: .
+    ports:
+      - 80:80
+    volumes:
+      - ./logs:/var/log/nginx
+    environment:
+      TZ: 'Europe/Warsaw'
+    network_mode: bridge
