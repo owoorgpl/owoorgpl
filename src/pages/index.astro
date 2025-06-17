@@ -78,20 +78,26 @@ const linksData = [
 // Board
 const boardData = [
   {
-    name: 'Michał Herda',
-    nick: 'Feniks',
-    titl: 'Prezes',
-    desc: 'Dłubie przy różnych organizacjach pozarządowych. Aktywny przy wydarzeniach oraz projektach niewydarzeniowych. Trochę idealista, trochę wypalony. Lubi pracę organiczną oraz dyskusje przy ***herbacie***.',
-    icon: '/assets/staff/feniks.webp',
-    mail: 'm.herda@owo.org.pl'
-  },
-  {
     name: 'Grzegorz Dzikowski',
     nick: 'Z-Grate',
-    titl: 'Wiceprezes',
+    titl: 'Prezes',
     desc: 'Współorganizuje dużo wydarzeń i akcji Stowarzyszenia. Zajmuje się wszystkimi papierami oraz rzeczami na cito. Zawsze **zapracowany**, zawsze coś robi, ale stara się zawsze znaleźć czas na pogadanie.',
     icon: '/assets/staff/znerd.webp',
     mail: 'g.dzikowski@owo.org.pl'
+  },
+  {
+    name: 'Paulina Siembida',
+    nick: 'Komatsu',
+    titl: 'Wiceprezes',
+    desc: 'Ekstrawertyczna ***smoko-ćma***. ratownik medyczny i artysta wszelkiej maści. Postanowiła spożytkować swoje umiejętności, znajomości i wiedzę oraz wolny czas, aby przysłużyć się pomocnym skrzydłem polskiemu środowisku Furry. I na razie dobrze się w tym bawi.',
+    icon: '/assets/staff/komatsu.webp'
+  },
+  {
+    name: 'Jacek Orłowski',
+    nick: 'Jaorek',
+    titl: 'Księgowy',
+    desc: 'Śnieżny leopard, który bardzo lubi w wolnym czasie siedzieć w papierach, tabelkach i przepisach prawa. W stowarzyszeniu zajmuje się sekcją księgową i dba o nasze *dokumenty*. Chętnie zawsze poda pomocną łapę. Prywatnie za to studiuje architekturę a w przyszłości planuje pielęgniarstwo.',
+    icon: 'assets/staff/jaorek.webp',
   },
   {
     name: 'Patrycja Piskuła',
@@ -115,49 +121,29 @@ const boardData = [
     icon: 'assets/staff/nova.webp',
   },
   {
-    name: 'Paulina Siembida',
-    nick: 'Komatsu',
+    name: 'Stanisław Samuel',
+    nick: 'Kazi',
     titl: 'Członek Zarządu',
-    desc: 'Ekstrawertyczna ***smoko-ćma***. ratownik medyczny i artysta wszelkiej maści. Postanowiła spożytkować swoje umiejętności, znajomości i wiedzę oraz wolny czas, aby przysłużyć się pomocnym skrzydłem polskiemu środowisku Furry. I na razie dobrze się w tym bawi.',
-    icon: '/assets/staff/komatsu.webp'
-  },
-  {
-    name: 'Jacek Orłowski',
-    nick: 'Jaorek',
-    titl: 'Członek Zarządu',
-    desc: 'Śnieżny leopard, który bardzo lubi w wolnym czasie siedzieć w papierach, tabelkach i przepisach prawa. W stowarzyszeniu zajmuje się sekcją księgową i dba o nasze *dokumenty*. Chętnie zawsze poda pomocną łapę. Prywatnie za to studiuje architekturę a w przyszłości planuje pielęgniarstwo.',
-    icon: 'assets/staff/jaorek.webp',
+    desc: 'Zawsze **zorganizowany**, zawsze **gotowy** do działania. A dodatkowo to husky. **Odpowiedzialny**, rozstawiając po kątach pyrkonowy Pokojowy Patrol, czy normiki w Wielkiej Obronie Hotelu Grand. Współorganizuje konwenty i wydarzenia futrzaste, a także dba o porządek w dokumentach. Prywatnie uwielbia długie rozmowy, **wannę** i poranną kawę w dobrym towarzystwie.',
+    // desc: 'Znikąd zorganizuje pełne *zabezpieczenie* wydarzenia i zadba o porządek w dokumentach. Prywatnie uwielbia długie rozmowy i poranną kawę w dobrym towarzystwie.',
+    icon: '/assets/staff/kazi.webp',
   },
 ];
 // Audit committee
 const comitteeData = [
   {
-    name: 'Marcin Wojtarowicz',
-    nick: 'Obey138',
-    titl: 'Przewodniczący Komisji Rewizyjnej',
-    desc: 'Czujne kocie oko, spoglądające ukradkiem na działanie całego stowarzyszenia i przypominające mu o obowiązkach. Prywatnie spokojny, wycofany. Z zawodu ochrona fizyczna, w wolnym czasie zajmuje się miksowaniem jako DJ, pomaganiem przy konwentach oraz głaskaniem kotów. *Miał miał miał!*',
-    icon: '/assets/staff/obey.webp',
-
-  },
-  // {
-  //   name: 'Patryk "Keijo" Jaworski',
-  //   titl: 'Członek Komisji Rewizyjnej',
-  //   desc: 'Komik, jaskiniowiec komputerowy, specjalista od Linuxa, fursuiter, w przyszłości może artysta. Zawodowo inżynier DevOps. Lubi pomagać, zajmować sie technologią, muzyką i tematami wokół. Nie lubi przelotnych trendów na świecie. Jeśli masz jakiś temat który chcesz przegadać z Keijo, nie bój się zagadać.',
-  //   icon: 'assets/staff/keijo.webp'
-  // },
-  {
     name: 'Oskar Janecki',
     nick: 'Rakso',
-    titl: 'Członek Komisji Rewizyjnej',
+    titl: 'Przewodniczący Komisji Rewizyjnej',
     desc: '**Energiczny** lis będący na co dzień zapalonym fanem programowania, WebDevu i wszystkiego, co ma związek z branżą IT oraz elektroniką. W stowarzyszeniu członek komisji rewizyjnej starający się rozwijać i zdobywać nowe umiejętności wspomagając polską furkulturę.',
     icon: 'assets/staff/rakso.webp',
   },
   {
-    name: 'Stanisław Samuel',
-    nick: 'Kazi',
+    name: 'Patryk Jaworski',
+    nick: 'Keijo',
     titl: 'Członek Komisji Rewizyjnej',
-    desc: 'Znikąd zorganizuje pełne *zabezpieczenie* wydarzenia i zadba o porządek w dokumentach. Prywatnie uwielbia długie rozmowy i poranną kawę w dobrym towarzystwie.',
-    icon: '/assets/staff/kazi.webp',
+    desc: 'Komik, jaskiniowiec komputerowy, specjalista od Linuxa, fursuiter, w przyszłości może artysta. Zawodowo inżynier DevOps. Lubi pomagać, zajmować sie technologią, muzyką i tematami wokół. Nie lubi przelotnych trendów na świecie. Jeśli masz jakiś temat który chcesz przegadać z Keijo, nie bój się zagadać.',
+    icon: 'assets/staff/keijo.webp'
   },
   {
     name: 'Leonard Jamróz',
