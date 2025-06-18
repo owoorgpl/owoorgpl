@@ -63,7 +63,7 @@
 }
 
 .owo-bg {
-    @apply bg-owowhite/70;
+    @apply bg-owowhite/60;
 }
 
 .quote::before {
