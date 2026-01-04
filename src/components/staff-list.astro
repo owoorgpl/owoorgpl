@@ -39,7 +39,7 @@ const {people, title}: Props = Astro.props;
                 </a> : null}
           </h2>
           <h3 class="mt-1 text-lg">{user.titl}</h3>
-          <p class="mt-4 break-words w-full" set:html={md.render(user.desc)}/>
+          <section class="staff-desc mt-4 break-words max-w-full w-[600px]" set:html={md.render(user.desc)}/>
         </div>
       </div>
   )}
