@@ -15,7 +15,7 @@ jobs:
     steps:
       # Checkout
       - name: Checkout website
-        uses: actions/checkout@v4
+        uses: actions/checkout@main
       
       # Branch
       - name: Get branch and tag vars
@@ -25,7 +25,7 @@ jobs:
 
       # Prepare
       - name: Login to GHCR registry
-        uses: docker/login-action@v3
+        uses: docker/login-action@main
         with:
           registry: ghcr.io
           username: ${{ github.actor }}
@@ -33,7 +33,7 @@ jobs:
       
       # Build and push
       - name: Build and push
-        uses: docker/build-push-action@v5
+        uses: docker/build-push-action@main
         with: 
           context: .
           push: true
