@@ -1,0 +1,12 @@
+[
+    {
+        "name": "Telegram",
+        "icon": "/assets/icons/social-telegram.svg",
+        "link": "https://t.me/owo_info"
+    },
+    {
+        "name": "Facebook",
+        "icon": "/assets/icons/social-facebook.svg",
+        "link": "https://www.facebook.com/owoorgpl"
+    }
+]

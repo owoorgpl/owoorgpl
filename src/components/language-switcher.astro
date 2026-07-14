@@ -1,0 +1,55 @@
+---
+import { DEFAULT_LOCALE, SUPPORTED_LOCALES, type Locale } from '../lib/locale';
+import { getCurrentLocaleFromContext } from '../lib/locale';
+
+const currentLocale = getCurrentLocaleFromContext(Astro);
+const { pathname } = Astro.url;
+
+function getLocalizedPath(targetLocale: Locale): string {
+	const segments = pathname.split('/').filter(Boolean);
+
+	// If the first segment is any supported locale, remove it to normalize the path
+	if (SUPPORTED_LOCALES.includes(segments[0] as Locale)) {
+		segments.shift();
+	}
+
+	// If the target locale is NOT the default, prepend it
+	if (targetLocale !== DEFAULT_LOCALE) {
+		segments.unshift(targetLocale);
+	}
+
+	return '/' + segments.join('/');
+}
+
+// Map locales to display names or flags
+const languageNames: Record<Locale, { name: string; icon: string }> = {
+	pl: { name: 'Polski', icon: '/assets/icons/flag-polish.svg' },
+	en: { name: 'English', icon: '/assets/icons/flag-english.svg' },
+};
+---
+
+<div class="relative inline-block text-left">
+	<div class="flex items-center gap-2 mb-1">
+		{
+			SUPPORTED_LOCALES.map((locale) => {
+				const isCurrent = locale === currentLocale;
+				if (isCurrent) return;
+
+				const targetPath = getLocalizedPath(locale as Locale);
+				const { name, icon } = languageNames[locale as Locale] ?? {
+					name: locale,
+					icon: '',
+				};
+
+				return (
+					<a
+						class="h-6 w-auto hover:scale-110 transition-all duration-100"
+						href={targetPath}
+					>
+						<img src={icon} alt={name} class="w-full h-full" />
+					</a>
+				);
+			}).filter(Boolean)
+		}
+	</div>
+</div>

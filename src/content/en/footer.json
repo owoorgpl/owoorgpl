@@ -1,0 +1,28 @@
+{
+    "address": {
+        "line1": "OwO Association",
+        "line2": "UL. ZAMKNIĘTA 10/1.5",
+        "line3": "30-554 KRAKÓW"
+    },
+    "registry": {
+        "krs": "0001100597",
+        "nip": "6793296635",
+        "regon": "52838914700000"
+    },
+    "links": [
+        {
+            "label": "Association Statute",
+            "href": "https://statut.owo.org.pl"
+        },
+        {
+            "label": "Children Protection Standards",
+            "href": "https://som.owo.org.pl"
+        },
+        {
+            "label": "Privacy Policy",
+            "href": "/policy"
+        }
+    ],
+    "copyrightHolder": "OwO Association",
+    "copyrightNotice": "All Rights Reserved"
+}

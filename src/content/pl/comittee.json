@@ -1,0 +1,23 @@
+[
+    {
+        "name": "Mateusz Kruk",
+        "nick": "Richard",
+        "titl": "Przewodniczący Komisji Rewizyjnej",
+        "desc": "**Hiena**. Prywatnie produkuje muzykę, Dj-uje a nawet programuje. 3-ci najnowszy fan Taco w polskim fandomie, jak widać humor mu dopisuje. W stowarzyszeniu dopilnuje, żeby wszystko było zgodne z przepisami oraz przejrzyste, a stowarzyszenie sprawne. Otwarty na rozmowy i dyskusje, a jeszcze bardziej na **kawę**. : 3",
+        "icon": "assets/staff/richard.webp"
+    },
+    {
+        "name": "Marcin Wojtarowicz",
+        "nick": "Obey138",
+        "titl": "Członek Komisji Rewizyjnej",
+        "desc": "Czujne kocie oko, spoglądające ukradkiem na działanie całego stowarzyszenia i przypominające mu o obowiązkach. Prywatnie spokojny, wycofany. Z zawodu ochrona fizyczna, w wolnym czasie zajmuje się miksowaniem jako DJ, pomaganiem przy konwentach oraz głaskaniem kotów. *Miał miał miał!*",
+        "icon": "/assets/staff/obey.webp"
+    },
+    {
+        "name": "Jakub Wyrwas",
+        "nick": "Jakubauke",
+        "titl": "Członek Komisji Rewizyjnej",
+        "desc": "Lis wielozadaniowiec, od helpowania na eventach, po fotografię, nerdzenie o pogodzie, hydrologię, aż po wykłady popularnonaukowe, konferencje naukowe i konwenty. Poza byciem członkiem Komisji Rewizyjnej jest również wiceprezesem Stowarzyszenia Sieć Obserwatorów Burz. Na co dzień student geografii na Uniwersytecie Śląskim, w wolnym czasie łowi burze i przed nimi ostrzega.",
+        "icon": "/assets/staff/jakubauke.webp"
+    }
+]

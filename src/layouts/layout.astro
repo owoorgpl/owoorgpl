@@ -1,23 +1,40 @@
 ---
 import '../styles/global.css';
 import Footer from '../components/footer.astro';
+import { getTranslatedDataForCurrentLocaleOrThrow } from '../hooks/getTranslatedData';
+import { getCurrentLocaleFromContext } from '../lib/locale';
+
 interface Props {
 	title: string;
 }
+
+type LayoutData = {
+  author: string;
+  description: string;
+  keywords: string;
+}
+
+const htmlLocaleMap = {
+  'pl': 'pl-PL',
+  'en': 'en-US',
+}
+
+const locale = getCurrentLocaleFromContext(Astro);
+const layoutData = await getTranslatedDataForCurrentLocaleOrThrow<LayoutData>('layout', Astro);
 
 const { title } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="pl" class="scroll-smooth overflow-x-hidden">
+<html lang={htmlLocaleMap[locale]} class="scroll-smooth overflow-x-hidden">
 	<head>
 		<title>{title}</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content="Stowarszyszenie OwO - Sekcja WebOwO">
+    <meta name="author" content={layoutData.author}>
     <meta name="title" content={title}>
-    <meta name="description" content="Wspieramy subkulturę furry">
-    <meta name="keywords" content="furry, furry fandom, futrzaki, subkultura furry, furkultura, stowarzyszenie owo, owo">
+    <meta name="description" content={layoutData.description}>
+    <meta name="keywords" content={layoutData.keywords}>
     <meta name="robots" content="index, follow, archive">
     <link rel="icon" type="image/webp" href="/favicon.webp">
     <link rel="preload" as="image" href="/assets/logo.svg">
