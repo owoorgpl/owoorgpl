@@ -1,0 +1,28 @@
+{
+    "address": {
+        "line1": "Stowarzyszenie OwO",
+        "line2": "UL. ZAMKNIĘTA 10/1.5",
+        "line3": "30-554 KRAKÓW"
+    },
+    "registry": {
+        "krs": "0001100597",
+        "nip": "6793296635",
+        "regon": "52838914700000"
+    },
+    "links": [
+        {
+            "label": "Statut Stowarzyszenia",
+            "href": "https://statut.owo.org.pl"
+        },
+        {
+            "label": "Standardy Ochrony Małoletnich",
+            "href": "https://som.owo.org.pl"
+        },
+        {
+            "label": "Polityka Prywatności",
+            "href": "/policy"
+        }
+    ],
+    "copyrightHolder": "Stowarzyszenie OwO",
+    "copyrightNotice": "Wszystkie Prawa Zastrzeżone"
+}

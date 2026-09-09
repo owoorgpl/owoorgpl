@@ -1,0 +1,33 @@
+[
+    {
+        "name": "Członkostwo",
+        "icon": "/assets/icons/person-rounded.svg",
+        "link": "https://forum.owo.org.pl/t/jak-dolaczyc-do-stowarzyszenia"
+    },
+    {
+        "name": "Statut Stowarzyszenia",
+        "icon": "/assets/icons/book.svg",
+        "link": "https://statut.owo.org.pl"
+    },
+    {
+        "name": "Standardy Ochrony Małoletnich",
+        "icon": "/assets/icons/book.svg",
+        "link": "https://standardy.owo.org.pl"
+    },
+    {
+        "name": "Polityka Prywatności",
+        "icon": "/assets/icons/book.svg",
+        "link": "/policy"
+    },
+    {
+        "name": "E-mail Kontakt",
+        "icon": "/assets/icons/mail-share.svg",
+        "link": "mailto:kontakt@owo.org.pl"
+    },
+    {
+        "name": "E-mail Komisja Rewizyjna",
+        "icon": "/assets/icons/mail-share.svg",
+        "link": "mailto:komisja-rewizyjna@owo.org.pl",
+        "dragon": true
+    }
+]

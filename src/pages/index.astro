@@ -1,195 +1,112 @@
 ---
-import Layout from '../layouts/layout.astro';
-import Page from '../components/page.astro';
-import TopMenu from '../components/top-menu.astro';
-import Links from '../components/links.astro';
-import Staff from '../components/staff-list.astro';
+import type { ComponentProps } from 'astro/types';
 import HtmlPanel from '../components/html-panel.astro';
-import Payment from '../components/payment.astro';
-import SiteDescription from '../components/site-description.astro';
+import Links from '../components/links.astro';
+import Page from '../components/page.astro';
+import { getTranslatedComponentForCurrentLocaleOrThrow } from '../hooks/getTranslatedComponent';
+import Staff from '../components/staff-list.astro';
+import TopMenu from '../components/top-menu.astro';
+import { getTranslatedDataForCurrentLocaleOrThrow } from '../hooks/getTranslatedData';
+import Layout from '../layouts/layout.astro';
 
+type LinksPropType = ComponentProps<typeof Links>['links'];
+type StaffPropType = ComponentProps<typeof Staff>['people'];
 
-// Social Media
-const socialsData = [
-  {
-    name: 'Telegram',
-    icon: '/assets/icons/social-telegram.svg',
-    link: 'https://t.me/owo_info',
-    dragon: true,
-  },
-  {
-    name: 'Facebook',
-    icon: '/assets/icons/social-facebook.svg',
-    link: 'https://www.facebook.com/owoorgpl'
-  },
-  // {
-  //   name: 'Twitter',
-  //   icon: '/assets/icons/social-twitter.svg',
-  //   link: 'https://x.com/owoorgpl',
-  //   tail: true,
-  // },
-  // {
-  //   name: 'Instagram',
-  //   icon: '/assets/entypo-social--instagram.svg',
-  //   link: 'https://example.com'
-  // },
-  // {
-  //   name: 'TikTok',
-  //   icon: '/assets/icons/social-tiktok.svg',
-  //   link: 'https://www.tiktok.com/@stowarzyszenie_owo'
-  // }
-];
-// Links
-const linksData = [
-  {
-    name: 'Członkostwo',
-    icon: '/assets/icons/person-rounded.svg',
-    link: 'https://forum.owo.org.pl/t/jak-dolaczyc-do-stowarzyszenia',
-    dragon: true,
-  },
-  {
-    name: 'Statut Stowarzyszenia',
-    icon: '/assets/icons/book.svg',
-    link: 'https://statut.owo.org.pl'
-  },
-  {
-    name: 'Standardy Ochrony Małoletnich',
-    icon: '/assets/icons/book.svg',
-    link: 'https://som.owo.org.pl',
-    tail: true
-  },
-  {
-    name: 'Polityka Prywatności',
-    icon: '/assets/icons/book.svg',
-    link: '/policy'
-  },
-  {
-    name: 'E-mail Kontakt',
-    icon: '/assets/icons/mail-share.svg',
-    link: 'mailto:kontakt@owo.org.pl'
-  },
-  {
-    name: 'E-mail Komisja Rewizyjna',
-    icon: '/assets/icons/mail-share.svg',
-    link: 'mailto:komisja-rewizyjna@owo.org.pl',
-    dragon: true
-  }
-];
-// Board
-const boardData = [
-  {
-    name: 'Grzegorz Dzikowski',
-    nick: 'Z-Grate',
-    titl: 'Prezes',
-    desc: 'Współorganizuje dużo wydarzeń i akcji Stowarzyszenia. Zajmuje się wszystkimi papierami oraz rzeczami na cito. Zawsze **zapracowany**, zawsze coś robi, ale stara się zawsze znaleźć czas na pogadanie.',
-    icon: '/assets/staff/znerd.webp',
-    mail: 'g.dzikowski@owo.org.pl'
-  },
-  {
-    name: 'Paulina Siembida',
-    nick: 'Komatsu',
-    titl: 'Wiceprezes',
-    desc: 'Ekstrawertyczna ***smoko-ćma***. ratownik medyczny i artysta wszelkiej maści. Postanowiła spożytkować swoje umiejętności, znajomości i wiedzę oraz wolny czas, aby przysłużyć się pomocnym skrzydłem polskiemu środowisku Furry. I na razie dobrze się w tym bawi.',
-    icon: '/assets/staff/komatsu.webp'
-  },
-  {
-    name: 'Jacek Orłowski',
-    nick: 'Jaorek',
-    titl: 'Skarbnik',
-    desc: 'Śnieżny leopard, który bardzo lubi w wolnym czasie siedzieć w papierach, tabelkach i przepisach prawa. W stowarzyszeniu zajmuje się sekcją księgową i dba o nasze *dokumenty*. Chętnie zawsze poda pomocną łapę. Prywatnie za to studiuje architekturę a w przyszłości planuje pielęgniarstwo.',
-    icon: 'assets/staff/jaorek.webp',
-  },
-  {
-    name: 'Patrycja Piskuła',
-    nick: 'Hasera',
-    titl: 'Członek Zarządu',
-    desc: '**Serwerownia** to jest jej drugi dom, odpowiada za infrastrukturę IT Stowarzyszenia oraz streaming wydarzeń. Współorganizuje konwenty i wydarzenia futrzaste oraz obsługuje wydarzenia fantastyczne. Doświadczenie czerpie ze współpracy z organizacjami pozarządowymi i z własnych projektów. Chętnie przytuli i pogada o technologii. *:3*',
-    icon: '/assets/staff/hasera.webp',
-  },
-  {
-    name: 'Adam Kowalski',
-    nick: 'Asdamk',
-    titl: 'Członek Zarządu',
-    desc: 'Karmelowy wilk etiopski trzymający łapkę na pulsie w każdym aspekcie działalności stowarzyszenia. Zawsze **gotowy** do pomocy, zawsze zainteresowany nowymi inicjatywami i pomysłami na rozwój furkultury.',
-    icon: 'assets/staff/asdamk.webp',
-  },
-  {
-    name: 'Stanisław Samuel',
-    nick: 'Kazi',
-    titl: 'Członek Zarządu',
-    desc: 'Zawsze **zorganizowany**, zawsze **gotowy** do działania. Dba o bezpieczeństwo tam, gdzie tylko się pojawi. A w dodatku to husky! Współorganizuje konwenty i wydarzenia futrzaste, a także pilnuje porządku w dokumentach. Prywatnie uwielbia długie rozmowy, **wannę** i poranną kawę w dobrym towarzystwie.',
-    icon: '/assets/staff/kazi.webp',
-  },
-];
-// Audit committee
-const comitteeData = [
-  {
-    name: 'Mateusz Kruk',
-    nick: 'Richard',
-    titl: 'Przewodniczący Komisji Rewizyjnej',
-    desc: '**Hiena**. Prywatnie produkuje muzykę, Dj-uje a nawet programuje. 3-ci najnowszy fan Taco w polskim fandomie, jak widać humor mu dopisuje. W stowarzyszeniu dopilnuje, żeby wszystko było zgodne z przepisami oraz przejrzyste, a stowarzyszenie sprawne. Otwarty na rozmowy i dyskusje, a jeszcze bardziej na **kawę**. :3',
-    icon: 'assets/staff/richard.webp',
-  },
-  {
-    name: 'Marcin Wojtarowicz',
-    nick: 'Obey138',
-    titl: 'Członek Komisji Rewizyjnej',
-    desc: 'Czujne kocie oko, spoglądające ukradkiem na działanie całego stowarzyszenia i przypominające mu o obowiązkach. Prywatnie spokojny, wycofany. Z zawodu ochrona fizyczna, w wolnym czasie zajmuje się miksowaniem jako DJ, pomaganiem przy konwentach oraz głaskaniem kotów. *Miał miał miał!*',
-    icon: '/assets/staff/obey.webp',
-  },
-  {
-    name: 'Jakub Wyrwas',
-    nick: 'Jakubauke',
-    titl: 'Członek Komisji Rewizyjnej',
-    desc: 'Lis wielozadaniowiec, od helpowania na eventach, po fotografię, nerdzenie o pogodze, hydrologię, aż po wykłady popularnonaukowe, konferencje naukowe i konwenty. Poza byciem członkiem Komisji Rewizyjnej jest również wiceprezesem Stowarzyszenia Sieć Obserwatorów Burz. Na co dzień student geografii na Uniwersytecie Śląskim, w wolnym czasie łowi burze i przed nimi ostrzega.',
-    icon: '/assets/staff/jakubauke.webp'
-  }
-];
+const [pageData, socialsData, linksData, boardData, comitteeData, Payment, SiteDescription] =
+	await Promise.all([
+		getTranslatedDataForCurrentLocaleOrThrow<Record<string, string>>(
+			'index-page',
+			Astro,
+		),
+		getTranslatedDataForCurrentLocaleOrThrow<LinksPropType>(
+			'socials',
+			Astro,
+		),
+		getTranslatedDataForCurrentLocaleOrThrow<LinksPropType>('links', Astro),
+		getTranslatedDataForCurrentLocaleOrThrow<StaffPropType>('board', Astro),
+		getTranslatedDataForCurrentLocaleOrThrow<StaffPropType>(
+			'comittee',
+			Astro,
+		),
+		getTranslatedComponentForCurrentLocaleOrThrow(
+			'payment',
+			Astro,
+		),
+		getTranslatedComponentForCurrentLocaleOrThrow(
+			'site-description',
+			Astro,
+		),
+	]);
 ---
 
-<Layout title="Stowarzyszenie OwO">
-  <TopMenu/>
-    <Page>
-      <div class="h-full flex-grow flex flex-col items-center justify-center bg-gradient-to-tr from-owopurple-800 to-owopurple-500">
-        <img src="/assets/logo.svg" alt="Logo" class="max-w-[38rem] w-full px-4 animate-in slide-in-from-bottom fade-in-0 duration-1000 delay-75">
-        <p class="mt-6 mv-7 p-2 tracking-wider font-bold text-3xl xs:text-4xl sm:text-5xl lg:text-6xl text-center animate-in fade-in duration-700 animation-delay-[0.75s] fill-mode-both">WSPIERAMY FURKULTURĘ</p>
-      </div>
-      <div class="absolute w-full bottom-4 flex flex-row justify-center items-center sm:flex animation-delay-1500 animate-in slide-in-from-bottom fade-in-0 duration-700 fill-mode-backwards">
-        <a class="ml-auto mr-auto hover:scale-105 transition duration-100h" href="#start">
-          <img src="/assets/icons/arrow-down.svg" alt="Arrow Down Icon" class="w-12 animate-bounce">
-        </a>
-      </div>
-      
-    </Page>
-    <div id="start" class="mb-32"/>
-    
-    <SiteDescription/>
+<Layout title={pageData['pageTitle']}>
+	<TopMenu />
+	<Page>
+		<div
+			class="h-full flex-grow flex flex-col items-center justify-center bg-gradient-to-tr from-owopurple-800 to-owopurple-500"
+		>
+			<img
+				src="/assets/logo.svg"
+				alt="Logo"
+				class="max-w-[38rem] w-full px-4 animate-in slide-in-from-bottom fade-in-0 duration-1000 delay-75"
+			/>
+			<p
+				class="mt-6 mv-7 p-2 tracking-wider font-bold text-3xl xs:text-4xl sm:text-5xl lg:text-6xl text-center animate-in fade-in duration-700 animation-delay-[0.75s] fill-mode-both"
+			>
+				{pageData['supportingFurculture']}
+			</p>
+		</div>
+		<div
+			class="absolute w-full bottom-4 flex flex-row justify-center items-center sm:flex animation-delay-1500 animate-in slide-in-from-bottom fade-in-0 duration-700 fill-mode-backwards"
+		>
+			<a
+				class="ml-auto mr-auto hover:scale-105 transition duration-100h"
+				href="#start"
+			>
+				<img
+					src="/assets/icons/arrow-down.svg"
+					alt="Arrow Down Icon"
+					class="w-12 animate-bounce"
+				/>
+			</a>
+		</div>
+	</Page>
+	<div id="start" class="mb-32"></div>
 
-    <!-- <Page id="start">
+	<SiteDescription />
+
+	<!-- <Page id="start">
       <div class="h-full flex flex-col items-center justify-center">
         <h1 class="bg-amber-700 p-2 font-bold">Second Page</h1>
       </div>
     </Page> -->
 
-    <div id="social-media" class="mb-24"/>
-    <h2 class="text-center font-bold text-3xl md:text-4xl uppercase mb-4 text-owowhite p-4">Gdzie nas znaleźć</h2>
-    <Links links={socialsData}/>
+	<div id="social-media" class="mb-24"></div>
+	<h2
+		class="text-center font-bold text-3xl md:text-4xl uppercase mb-4 text-owowhite p-4"
+	>
+		{pageData['whereToFindUs']}
+	</h2>
+	<Links links={socialsData} />
 
-    <div id="links" class="mb-24"/>
-    <HtmlPanel>
-      <div class="flex flex-col justify-center items-center">
-        <h2 class="text-center font-bold text-3xl md:text-4xl uppercase mb-4">Ważne linki</h2>
-        <Links negative links={linksData}/>
-      </div>
-    </HtmlPanel>
-    
-  
-    <div id="stuff" class="pt-24 flex flex-col gap-24 mb-24">
-      <Staff people={boardData} title="Zarząd Stowarzyszenia"/>
-      <Staff people={comitteeData} title="Komisja Rewizyjna"/>
-    </div>
+	<div id="links" class="mb-24"></div>
+	<HtmlPanel>
+		<div class="flex flex-col justify-center items-center">
+			<h2
+				class="text-center font-bold text-3xl md:text-4xl uppercase mb-4"
+			>
+				{pageData['importantLinks']}
+			</h2>
+			<Links negative links={linksData} />
+		</div>
+	</HtmlPanel>
 
-    <div id="payment" class="mx-auto">
-      <Payment/>
-    </div>
+	<div id="stuff" class="pt-24 flex flex-col gap-24 mb-24">
+		<Staff people={boardData} title={pageData['boardTitle']} />
+		<Staff people={comitteeData} title={pageData['committeeTitle']} />
+	</div>
+
+	<div id="payment" class="mx-auto">
+		<Payment />
+	</div>
 </Layout>

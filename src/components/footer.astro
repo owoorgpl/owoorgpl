@@ -1,9 +1,15 @@
 ---
-interface Props {
+import { getTranslatedDataForCurrentLocaleOrThrow } from '../hooks/getTranslatedData';
 
+interface FooterContent {
+	address: { line1: string; line2: string; line3: string };
+	registry: { krs: string; nip: string; regon: string };
+	links: { label: string; href: string }[];
+	copyrightHolder: string;
+	copyrightNotice: string;
 }
 
-const {}: Props = Astro.props;
+const content = await getTranslatedDataForCurrentLocaleOrThrow<FooterContent>('footer', Astro);
 ---
 
 <div
@@ -19,28 +25,30 @@ const {}: Props = Astro.props;
   <div class="flex flex-col md:flex-row gap-6 md:gap-0 grow justify-around z-10">
     <div>
       <p class="font-extrabold text-center md:text-start">
-        Stowarzyszenie OwO <br/>
-        UL. ZAMKNIĘTA 10/1.5 <br/>
-        30-554 KRAKÓW
+        {content.address.line1}<br/>
+        {content.address.line2}<br/>
+        {content.address.line3}
       </p>
     </div>
     <div>
       <p class="font-extrabold text-center md:text-start">
-        KRS 0001100597 <br/>
-        NIP 6793296635 <br/>
-        REGON 52838914700000
+        KRS&nbsp;{content.registry.krs}<br/>
+        NIP&nbsp;{content.registry.nip}<br/>
+        REGON&nbsp;{content.registry.regon}
       </p>
     </div>
     <div>
       <p class="font-extrabold text-center md:text-start">
-        <a class="underline hover:text-owopurple-500" href="https://statut.owo.org.pl">Statut Stowarzyszenia</a><br/>
-        <a class="underline hover:text-owopurple-500" href="https://som.owo.org.pl">Standardy Ochrony
-          Małoletnich</a><br/>
-        <a class="underline hover:text-owopurple-500" href="/policy">Polityka Prywatności</a>
+        {content.links.map((link, index) => (
+          <>
+            <a class="underline hover:text-owopurple-500" href={link.href}>{link.label}</a>
+            {index < content.links.length - 1 && <br/>}
+          </>
+        ))}
       </p>
     </div>
     <div class="text-center md:text-start flex items-center justify-center">
-      <p class="font-extrabold opacity-100">© {new Date().getFullYear()} Stowarzyszenie OwO<br/>Wszystkie Prawa Zastrzeżone</p>
+      <p class="font-extrabold opacity-100">©&nbsp;{new Date().getFullYear()}&nbsp;{content.copyrightHolder}<br/>{content.copyrightNotice}</p>
     </div>
   </div>
 </div>
